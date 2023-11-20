@@ -1,0 +1,22 @@
+/*
+ * 5．编写并测试一个函数larger_of()，该函数把两个double类型变量的值替换为较大的值。例如，larger_of(x, y)会把x和y中较大的值重新赋给两个变量。
+ */
+#include<stdio.h>
+
+void larger_of(double *, double *);
+
+int main(void)
+{
+    double x,y;
+    scanf("%lf%lf",&x,&y);
+    printf("before:x=%f,y=%f.\n",x,y);
+    larger_of(&x,&y);
+    prinft("after:x=%f,y=%f.\n",x,y);
+    return 0;
+}
+
+void larger_of(double * px,double * py)
+{
+    *px = *px > *py ? *px : *py;
+    *py = *px;
+}

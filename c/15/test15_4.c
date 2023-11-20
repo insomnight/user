@@ -1,0 +1,26 @@
+/*
+ * 4．编写一个程序，接受两个int类型的参数：一个是值；一个是位的位置。如果指定位的位置为1，该函数返回1；否则返回0。在一个程序中测试该函数。
+ */
+#include <stdio.h>
+
+#define MARK 0x1
+
+int bitval(int n,int b);
+
+int main(void)
+{
+    int num;
+    int b;
+    int val;
+    while(scanf("%d%d",&num,&b) == 2)
+    {
+        val=bitval(num,b);
+        printf("The %d bit in %d is %d\n",b,num,val);
+    }
+    return 0;
+}
+
+int bitval(int n,int b)
+{
+    return (n>>b) & MARK;
+}

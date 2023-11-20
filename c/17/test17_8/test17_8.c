@@ -1,0 +1,172 @@
+/*
+ * 8．修改宠物俱乐部程序，把所有同名的宠物都存储在同一个节点中。当用户选择查找宠物时，程序应询问用户该宠物的名字，然后列出该名字的所有宠物（及其种类）。
+ */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include "tree.h"
+
+char menu(void);
+void addpet(Tree * pt);
+void droppet(Tree * pt);
+void showpets(const Tree * pt);
+void findpet(const Tree * pt);
+void printitem(Item item);
+void uppercase(char * str);
+char * s_gets(char * st, int n);
+
+int main(void)
+{
+    Tree pets;
+    char choice;
+
+    InitializeTree(&pets);
+    while ((choice = menu()) != 'q')
+    {
+        switch (choice)
+        {
+        case 'a':  addpet(&pets);
+            break;
+        case 'l':  showpets(&pets);
+            break;
+        case 'f':  findpet(&pets);
+            break;
+        case 'n':  printf("%d pets in club\n",
+            TreeItemCount(&pets));
+            break;
+        case 'd':  droppet(&pets);
+            break;
+        default:  puts("Switching error");
+        }
+    }
+    DeleteAll(&pets);
+    puts("Bye.");
+
+    return 0;
+}
+
+char menu(void)
+{
+    int ch;
+
+    puts("Nerfville Pet Club Membership Program");
+    puts("Enter the letter corresponding to your choice:");
+    puts("a) add a pet          l) show list of pets");
+    puts("n) number of pets     f) find pets");
+    puts("d) delete a pet       q) quit");
+    while ((ch = getchar()) != EOF)
+    {
+        while (getchar() != '\n')  /* 处理输入行的剩余内容 */
+            continue;
+        ch = tolower(ch);
+        if (strchr("alrfndq", ch) == NULL)
+            puts("Please enter an a, l, f, n, d, or q:");
+        else
+            break;
+    }
+    if (ch == EOF)       /* 使程序退出 */
+        ch = 'q';
+
+    return ch;
+}
+
+void addpet(Tree * pt)
+{
+    Item temp;
+
+    if (TreeIsFull(pt))
+        puts("No room in the club!");
+    else
+    {
+        puts("Please enter name of pet:");
+        s_gets(temp.petname, SLEN);
+        puts("Please enter pet kind:");
+        s_gets(temp.petkind[0], SLEN);
+        uppercase(temp.petname);
+        uppercase(temp.petkind[0]);
+        temp.count = 1;
+        AddItem(&temp, pt);
+    }
+}
+
+void showpets(const Tree * pt)
+{
+    if (TreeIsEmpty(pt))
+        puts("No entries!");
+    else
+        Traverse(pt, printitem);
+}
+
+void printitem(Item item)
+{
+    for(int i = 0 ; i < item.count; i++)
+        printf("Pet: %-19s  Kind: %-19s\n", item.petname,item.petkind[i]);
+}
+
+void findpet(const Tree * pt)
+{
+    Item temp;
+    Trnode *tn;
+
+    if (TreeIsEmpty(pt))
+    {
+        puts("No entries!");
+        return;     /* 如果树为空，则退出该函数 */
+    }
+
+    puts("Please enter name of pet you wish to find:");
+    s_gets(temp.petname, SLEN);
+    uppercase(temp.petname);
+    printf("%s the %s \n", temp.petname);
+    if ((tn = InTree(&temp, pt)) != NULL)
+        printitem(tn -> item);
+    else
+        printf("is not a member.\n");
+}
+
+void droppet(Tree * pt)
+{
+    Item temp;
+
+    if (TreeIsEmpty(pt))
+    {
+        puts("No entries!");
+        return;     /* 如果树为空，则退出该函数 */
+    }
+
+    puts("Please enter name of pet you wish to delete:");
+    s_gets(temp.petname, SLEN);
+    puts("Please enter pet kind:");
+    s_gets(temp.petkind[0], SLEN);
+    uppercase(temp.petname);
+    if (DeleteItem(&temp, pt))
+        printf("is dropped from the club.\n");
+    else
+        printf("is not a member.\n");
+}
+
+void uppercase(char * str)
+{
+    while (*str)
+    {
+        *str = toupper(*str);
+        str++;
+    }
+}
+char * s_gets(char * st, int n)
+{
+    char * ret_val;
+    char * find;
+
+    ret_val = fgets(st, n, stdin);
+    if (ret_val)
+    {
+        find = strchr(st, '\n'); // 查找换行符
+        if (find)                // 如果地址不是 NULL，
+            *find = '\0';       // 在此处放置一个空字符
+        else
+            while (getchar() != '\n')
+                continue;      // 处理输入行的剩余内容
+    }
+    return ret_val;
+}

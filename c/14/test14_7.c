@@ -1,0 +1,217 @@
+/*
+ * 7．修改程序清单14.14，从文件中读取每条记录并显示出来，允许用户删除记录或修改记录的内容。如果删除记录，把空出来的空间留给下一个要读入的记录。要修改现有的文件内容，必须用"r+b"模式，而不是"a+b"模式。而且，必须更加注意定位文件指针，防止新加入的记录覆盖现有记录。最简单的方法是改动存储在内存中的所有数据，然后再把最后的信息写入文件。跟踪的一个方法是在book结构中添加一个成员表示是否该项被删除。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#define MAXTITL  40
+#define MAXAUTL  40
+#define MAXBKS   10             /* 最大书籍数量 */
+char * s_gets(char * st, int n);
+struct book {                   /* 建立 book 模板 */
+    char title[MAXTITL];
+    char author[MAXAUTL];
+    float value;
+};
+
+void print_book(struct book **plib,int size);
+int menu();
+void eatline(void);
+void add(struct book **plib,struct book *library,int *count);
+void remove_book(struct book **plib,int *count);
+void edit_book(struct book **plib,int *count);
+
+int main(void)
+{
+    struct book library[MAXBKS];  /* 结构数组  */
+    struct book * plib[MAXBKS] = {NULL}; 
+    int count = 0;
+    int index,op;
+    FILE * pbooks;
+    int size = sizeof(struct book);
+
+    if ((pbooks = fopen("book.dat", "r+b")) == NULL)
+    {
+        fputs("Can't open book.dat file\n", stderr);
+        exit(1);
+    }
+
+    rewind(pbooks);            /* 定位到文件开始 */
+    while (count < MAXBKS &&  fread(&library[count], size,
+        1, pbooks) == 1)
+    {
+        plib[count] = &library[count];
+        count++;
+    }
+    
+    print_book(plib,count);
+
+    while((op = menu()) != 5)
+    {
+        switch(op)
+        {
+            case 1: add(plib,library,&count);
+                break;
+            case 2: remove_book(plib, &count);
+                break;
+            case 3: edit_book(plib,&count);
+                break;
+            case 4: print_book(plib,count);
+                break;
+            default:
+                break;
+        }
+    }
+
+    if (count > 0)
+    {
+        print_book(plib,count);
+        int curr_count = 0;
+        int result = ftruncate(fileno(pbooks), 0);
+        rewind(pbooks);            /* 定位到文件开始 */
+        for(int i = 0; curr_count < count; i++)
+        if(plib[i] != NULL) 
+        {
+            fwrite(plib[i],size,1,pbooks);
+            curr_count++;
+        }
+    }
+    else
+        puts("No books? Too bad.\n");
+
+    puts("Bye.\n");
+    fclose(pbooks);
+
+    return 0;
+}
+
+char * s_gets(char * st, int n)
+{
+     char * ret_val;
+     char * find;
+
+     ret_val = fgets(st, n, stdin);
+     if (ret_val)
+     {
+          find = strchr(st, '\n');    // 查找换行符
+          if (find)                // 如果地址不是 NULL，
+               *find = '\0';            // 在此处放置一个空字符
+          else
+               while (getchar() != '\n')
+                    continue;        // 清理输入行
+     }
+     return ret_val;
+}
+
+void print_book(struct book **plib,int size)
+{
+    int curr_count = 0;
+    if (size > 0)
+    {
+        puts("Here is the list of your books:");
+        for(int i = 0; curr_count < size; i++)
+        if(plib[i] != NULL) 
+        {
+            curr_count++;
+            printf("%d: %s by %s: $%.2f\n", i, plib[i]->title,
+                plib[i]->author, plib[i]->value);
+        }
+    } else
+        puts("No books? Too bad.\n");
+}
+
+
+int menu()
+{
+    int op;
+    puts("Enter what you want to do?");
+    puts("1 add new book        2 remove a book");
+    puts("3 edit a book         4 print book list");
+    puts("5 save and exit");
+    while(scanf("%d",&op) != 1 || op >5 || op < 1)
+    {
+        eatline();
+        puts("Please enter 1,2,3,4, or 5:");
+    }
+    eatline();
+    return op;
+}
+
+void eatline(void)
+{
+    while(getchar() != '\n')
+        continue;
+}
+
+void add(struct book **plib,struct book *library,int *count)
+{
+    if (*count == MAXBKS)
+    {
+        puts("The book.dat file is full.");
+        return ;
+    }
+
+    puts("Please add new book titles.");
+    puts("Press [enter] at the start of a line to stop.");
+    while (*count < MAXBKS && s_gets(library[*count].title, MAXTITL) != NULL
+        && library[*count].title[0] != '\0')
+    {
+        puts("Now enter the author.");
+        s_gets(library[*count].author, MAXAUTL);
+        puts("Now enter the value.");
+        scanf("%f", &library[*count].value);
+        plib[*count] = &library[*count];
+        (*count)++;
+        eatline();
+        if (*count < MAXBKS)
+            puts("Enter the next title.");
+    }
+}
+
+void remove_book(struct book **plib,int *count)
+{
+    if(*count < 1)
+    {
+        puts("No book!Pleace choose other ation!");
+        return;
+    }
+    print_book(plib,*count);
+
+    int index;
+    puts("Please enter the book number what you want to remove:");
+    while(scanf("%d",&index) != 1 || index < 0 || index > * count)
+        printf("The number is not a digit or not between 0 to %d.\nPleace enter again!\n" ,*count);
+    eatline();
+
+    plib[index] = NULL;
+    (*count)--;
+}
+
+void edit_book(struct book **plib,int *count)
+{
+    if(*count < 1)
+    {
+        puts("No book!Pleace choose other ation!");
+        return;
+    }
+    print_book(plib,*count);
+
+    int index;
+    puts("Please enter the book number what you want to edit:");
+    while(scanf("%d",&index) != 1 || index < 0 || index > * count || plib[index] == NULL)
+        printf("The number is not a digit or not between 0 to %d.\nPleace enter again!\n" ,*count);
+    eatline();
+
+    puts("Please add a book titles.");
+    puts("Press [enter] at the start of a line to stop.");
+    if (*count < MAXBKS && s_gets(plib[index]->title, MAXTITL) != NULL
+        && plib[index]->title[0] != '\0')
+    {
+        puts("Now enter the author.");
+        s_gets(plib[index]->author, MAXAUTL);
+        puts("Now enter the value.");
+        scanf("%f", &plib[index]->value);
+        eatline();
+    }
+}

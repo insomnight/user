@@ -1,0 +1,19 @@
+/*
+ * 2．在美国，通常以英里/加仑来计算油耗；在欧洲，以升/100公里来计算。下面是程序的一部分，提示用户选择计算模式（美制或公制），然后接收数据并计算油耗。
+ * 下面是是一些输出示例：
+Enter 0 for metric mode, 1 for US mode: 0
+Enter distance traveled in kilometers: 600
+Enter fuel consumed in liters: 78.8
+Fuel consumption is 13.13 liters per 100 km.
+Enter 0 for metric mode, 1 for US mode (-1 to quit): 1
+Enter distance traveled in miles: 434
+Enter fuel consumed in gallons: 12.7
+Fuel consumption is 34.2 miles per gallon.
+Enter 0 for metric mode, 1 for US mode (-1 to quit): 3
+Invalid mode specified. Mode 1(US) used.
+Enter distance traveled in miles: 388
+Enter fuel consumed in gallons: 15.3
+Fuel consumption is 25.4 miles per gallon.
+Enter 0 for metric mode, 1 for US mode (-1 to quit): -1
+Done.
+*/

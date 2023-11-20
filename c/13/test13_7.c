@@ -1,0 +1,58 @@
+/*
+ * 7．编写一个程序打开两个文件。可以使用命令行参数或提示用户输入文件名。　　a．　该程序以这样的顺序打印：打印第1个文件的第1行，第2个文件的第1行，第1个文件的第2行，第2个文件的第2行，以此类推，打印到行数较多文件的最后一行。　　b．　修改该程序，把行号相同的行打印成一行。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#define BUFFSIZE 256
+
+int print_line(FILE *fp);
+
+int main(int argc, char * argv[])
+{
+    FILE * fp1, * fp2;
+    int flag1 = 1;
+    int flag2 = 1;
+    if(argc < 3)
+    {
+        fprintf(stderr,"Usage: %s file1 file2",argv[0]);
+        exit(EXIT_FAILURE);
+    }
+    
+    if((fp1 = fopen(argv[1],"r")) == NULL)
+    {
+        fprintf(stderr,"Can't open %s\n",argv[1]);
+        exit(EXIT_FAILURE);
+    }
+
+    if((fp2 = fopen(argv[2],"r")) == NULL)
+    {
+        fprintf(stderr,"Can't open %s\n",argv[2]);
+        exit(EXIT_FAILURE);
+    }
+
+    while(flag1 || flag2)
+    {
+        flag1 = print_line(fp1);
+        //if(flag1)
+         //   putchar('\n');
+        flag2 = print_line(fp2);
+        //if(flag2)
+            putchar('\n');
+    }
+    return 0;
+}
+
+int print_line(FILE * fp)
+{
+    int count = 0;
+    char ch;
+    while((ch = fgetc(fp)) !=EOF && ch != '\n')
+    {
+        putchar(ch);
+        count++;
+    }
+    //if(count)
+  //      putchar('\n');
+    return count;
+}
+

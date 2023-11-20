@@ -1,0 +1,107 @@
+
+/*
+ * 1．重新编写复习题5，用月份名的拼写代替月份号（别忘了使用strcmp()）。在一个简单的程序中测试该函数。
+ */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#define LEN 100
+
+struct month {
+    char name[10];
+    char abbrev[4];
+    int days;
+    int monumb;
+};
+
+struct month months[12] =
+{
+    { "January", "jan", 31, 1 },
+    { "February", "feb", 28, 2 },
+    { "March", "mar", 31, 3 },
+    { "April", "apr", 30, 4 },
+    { "May", "may", 31, 5 },
+    { "June", "jun", 30, 6 },
+    { "July", "jul", 31, 7 },
+    { "August", "aug", 31, 8 },
+    { "September", "sep", 30, 9 },
+    { "October", "oct", 31, 10 },
+    { "November", "nov", 30, 11 },
+    { "December", "dec", 31, 12 }
+};
+
+char * s_gets(char * st, int n);
+int days(int month);
+char * TOLOWER(char * st);
+
+int daysbyaddrevs(char * abbrev);
+
+int main(void)
+{
+    char choice[LEN];
+    int total;
+    puts("Enter a month :");
+    while(s_gets(choice,LEN) != NULL && choice[0] != '\0')
+    {
+        TOLOWER(choice);
+        if((total = daysbyaddrevs(choice)) != -1)
+            printf("%s total days is %d\n",choice,total);
+        puts("Enter a month :");
+    }
+    
+    return 0;
+}
+
+int daysbyaddrevs(char * abbrev)
+{
+    int month = 0;
+    for(;month < 12; month++)
+        if(strcmp(abbrev,months[month].abbrev))
+            return days(months[month].monumb);
+    return -1;
+}
+        
+
+char * s_gets(char * st, int n)
+{
+    char *ret_val;
+    char *find;
+    ret_val = fgets(st,n,stdin);
+    if(ret_val)
+    {
+        find = strchr(st,'\n');
+        if(find)
+            *find = '\0';
+        else
+            while(getchar()!='\n')
+                continue;
+    }
+    return ret_val;
+}
+
+int days(int month)
+{
+    int index, total;
+    if (month < 1 || month > 12)
+        return(-1); /* error signal */
+    else
+    {
+        for (index = 0, total = 0; index < month; index++)
+            total += months[index].days;
+        return(total);
+    }
+}
+
+char * TOLOWER(char * st)
+{
+    char * ret_val;
+    ret_val = st;
+
+    while(*ret_val != '\0')
+    {
+        *ret_val = tolower(*ret_val);
+        ret_val++;
+    }
+    return st;
+}
+        

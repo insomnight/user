@@ -1,0 +1,48 @@
+/*
+ * 8．编写一个程序，以一个字符和任意文件名作为命令行参数。如果字符后面没有参数，该程序读取标准输入；否则，程序依次打开每个文件并报告每个文件中该字符出现的次数。文件名和字符本身也要一同报告。程序应包含错误检查，以确定参数数量是否正确和是否能打开文件。如果无法打开文件，程序应报告这一情况，然后继续处理下一个文件。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+int char_count(FILE *fp, char ch);
+
+int main(int argc, char * argv[])
+{
+    FILE * fp;
+    int count = 0;
+
+    if(argc < 2)
+    {
+        fprintf(stderr,"Usage: %s find_char [file1] [file2] ...",argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    if(argc == 2)
+    {
+        count = char_count(stdin,argv[1][0]);
+        printf("Your type %c %d time.\n",argv[1][0],count);
+    } else
+        for(int i = 2; i < argc; i++)
+            if((fp = fopen(argv[i],"r")) == NULL)
+                fprintf(stderr,"Can't open %s\n",argv[i]);
+            else
+            {
+                count = char_count(fp,argv[1][0]);
+                printf("The %s has %d letters %c\n",argv[i],count,argv[1][0]);
+                fclose(fp);
+            }
+    puts("Bye!");
+
+    return 0;
+}
+
+int char_count(FILE *fp, char ch)
+{
+    int count = 0;
+    char fch
+    while((fch = fgetc(fp)) != EOF)
+        if(ch == fch)
+            count++;
+    return count;
+}
+

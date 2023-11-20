@@ -1,0 +1,112 @@
+/*
+ * 4．重写mall.c（程序清单17.9），用两个队列模拟两个摊位。
+ */
+// 和 queue.c 一起编译
+#include <stdio.h>
+#include <stdlib.h>            // 提供 rand() 和 srand() 的原型
+#include <time.h>              // 提供 time() 的原型
+#include "queue.h"             // 更改 Item 的 typedef
+#define MIN_PER_HR 60.0
+#define MALLCOUNT 2
+
+bool newcustomer(double x);    // 是否有新顾客到来？
+Item customertime(long when);  // 设置顾客参数
+
+int main(void)
+{
+    Queue line[MALLCOUNT];
+    Item temp;                // 新的顾客数据
+    int hours[MALLCOUNT];                // 模拟的小时数
+    int perhour[MALLCOUNT];              // 每小时平均多少位顾客
+    long cycle, cyclelimit[MALLCOUNT];   // 循环计数器、计数器的上限
+    long turnaways[MALLCOUNT] = {0};       // 因队列已满被拒的顾客数量
+    long customers[MALLCOUNT] = {0};       // 加入队列的顾客数量
+    long served[MALLCOUNT] = {0};          // 在模拟期间咨询过Sigmund的顾客数量
+    long sum_line[MALLCOUNT] = {0};        // 累计的队列总长
+    int wait_time[MALLCOUNT] = {0};        // 从当前到Sigmund空闲所需的时间
+    double min_per_cust[MALLCOUNT];      // 顾客到来的平均时间
+    long line_wait[MALLCOUNT] = {0};       // 队列累计的等待时间
+
+    for(int i = 0; i < MALLCOUNT; i++)
+    {
+        InitializeQueue(&line[i]);
+        srand((unsigned int) time(0)); // rand() 随机初始化
+        printf("Case Study: Sigmund Lander's Advice Booth %d:",i);
+        printf("Enter the number of mall %d simulation hours:",i);
+        scanf("%d", &hours[i]);
+        cyclelimit[i] = MIN_PER_HR * hours[i];
+        printf("Enter the average number of mall %d customers per hour:",i);
+        scanf("%d", &perhour[i]);
+        min_per_cust[i] = MIN_PER_HR / perhour[i];
+
+        for (cycle = 0; cycle < cyclelimit[i]; cycle++)
+        {
+            if (newcustomer(min_per_cust[i]))
+            {
+                if (QueueIsFull(&line[i]))
+                    turnaways[i]++;
+                else
+                {
+                    customers[i]++;
+                    temp = customertime(cycle);
+                    EnQueue(temp, &line[i]);
+                }
+            }
+            if (wait_time[i] <= 0 && !QueueIsEmpty(&line[i]))
+            {
+                DeQueue(&temp, &line[i]);
+                wait_time[i] = temp.processtime;
+                line_wait[i] += cycle - temp.arrive;
+                served[i]++;
+            }
+            if (wait_time[i] > 0)
+                wait_time[i]--;
+            sum_line[i] += QueueItemCount(&line[i]);
+        }
+    }
+
+    for(int i = 0 ; i < MALLCOUNT; i++)
+    {
+        if (customers[i] > 0)
+        {
+            printf("mall %d customers accepted: %ld\n",i, customers[i]);
+            printf("mall %d  customers served: %ld\n",i, served[i]);
+            printf("mall %d       turnaways: %ld\n",i, turnaways[i]);
+            printf("mall %d average queue size: %.2f\n",i,
+            (double) sum_line[i] / cyclelimit[i]);
+            printf(" average wait time: %.2f minutes\n",
+            (double) line_wait[i] / served[i]);
+        }
+        else
+            printf("mall %d No customers!",i);
+
+        putchar('\n');
+        EmptyTheQueue(&line[i]);
+    }
+    puts("Bye!");
+
+    return 0;
+}
+
+// x是顾客到来的平均时间（单位：分钟）
+// 如果1分钟内有顾客到来，则返回true
+bool newcustomer(double x)
+{
+    if (rand() * x / RAND_MAX < 1)
+        return true;
+    else
+        return false;
+}
+
+// when是顾客到来的时间
+// 该函数返回一个Item结构，该顾客到达的时间设置为when，
+// 咨询时间设置为1～3的随机值
+Item customertime(long when)
+{
+    Item cust;
+
+    cust.processtime = rand() % 3 + 1;
+    cust.arrive = when;
+
+    return cust;
+}

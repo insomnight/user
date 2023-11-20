@@ -1,0 +1,69 @@
+/* list.c -- 支持链表操作的函数 */
+#include <stdio.h>
+#include <stdlib.h>
+#include "list.h"
+
+/* 局部函数原型 */
+static void CopyToNode(Item source, Item *target);
+
+/* 接口函数   */
+/* 把元素个数设置为零 */
+void InitializeList(List * plist)
+{
+    plist->items = 0;
+}
+
+/* 如果元素个数为零，返回true */
+bool ListIsEmpty(const List * plist)
+{
+    if (plist -> items == 0)
+        return true;
+    else
+        return false;
+}
+
+/* 如果元素个数等于数组最大容量，返回true */
+bool ListIsFull(const List * plist)
+{
+    if (plist -> items == MAXSIZE)
+        return true;
+    else
+        return false;
+}
+
+/* 返回节点的数量 */
+unsigned int ListItemCount(const List * plist)
+{
+    return plist->items;
+}
+
+/* 创建存储项的节点，并将其添加至由plist指向的链表末尾（较慢的实现） */
+bool AddItem(Item item, List * plist)
+{
+    if (plist->items == MAXSIZE)
+        return false;          /* 失败时退出函数 */
+
+    CopyToNode(item, &plist->entries[plist->items]);
+    plist->items++;
+    return true;
+}
+
+/* 访问每个节点并执行pfun指向的函数 */
+void Traverse(const List * plist, void(*pfun)(Item item))
+{
+    for(int i = 0; i < plist->items; i++)
+        (*pfun)(plist->entries[i]); /* 把函数应用于链表中的项 */
+}
+
+/* 设置元素个数为零       */
+void EmptyTheList(List * plist)
+{
+    plist->items = 0;
+}
+
+/* 局部函数定义 */
+/* 把一个项拷贝到节点中 */
+static void CopyToNode(Item source, Item *target)
+{
+    *target = source;  /* 拷贝结构 */
+}

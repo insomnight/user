@@ -1,0 +1,41 @@
+/* * 10．编写一个函数，把两个数组中相对应的元素相加，然后把结果存储到第3个数组中。也就是说，如果数组1中包含的值是2、4、5、8，数组2中包含的值是1、0、4、6，那么该函数把3、4、9、14赋给第3个数组。函数接受3个数组名和一个数组大小。在一个简单的程序中测试该函数。
+ */
+#include<stdio.h>
+#define ARR_SIZE 4
+
+void sum_arr(int a[],int b[],int target[],int n);
+void print_arr(int arr[],int n);
+
+int main(void)
+{
+    int a[ARR_SIZE]={2, 4, 5, 8},b[ARR_SIZE]={1, 0, 4, 6};
+    int target[ARR_SIZE];
+
+    puts("a:");
+    print_arr(a,ARR_SIZE);
+    
+    puts("b:");
+    print_arr(b,ARR_SIZE);
+
+    sum_arr(a,b,target,ARR_SIZE);
+    
+    puts("target:");
+    print_arr(target,ARR_SIZE);
+
+    return 0;
+}
+
+
+void sum_arr(int a[],int b[],int target[],int n)
+{
+    for(int i = 0; i < n; i++)
+        target[i] = a[i] + b[i];
+}
+
+
+void print_arr(int arr[],int n)
+{
+    for(int i = 0; i < n; i++)
+        printf("%8d ",arr[i]);
+    putchar('\n');
+}

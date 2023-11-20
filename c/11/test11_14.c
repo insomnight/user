@@ -1,0 +1,34 @@
+/*
+ * 14．编写一个通过命令行运行的程序计算幂。第1个命令行参数是double类型的数，作为幂的底数，第2个参数是整数，作为幂的指数。
+ */
+#include<stdio.h>
+#include<stdlib.h>
+
+double power(double,long);
+
+int main(int argc, char *argv[])
+{
+    char * end;
+    double value,result;
+    long p;
+    if(argc < 3)
+    {
+        puts("wran argv count no right");
+    }
+    value = strtod(argv[1],&end);
+    p = strtol(argv[2],&end,10);
+    result = power(value,p);
+    printf("%lf power %ld = %f\n",value,p,result);
+
+    return 0;
+}
+    
+double power(double n, long p)
+{
+    double pow = 1;
+    long i;
+
+    for(i = 1; i <= ( p > 0 ? p : -p); i++)
+        pow *= n;
+    return p > 0 ? pow : 1 / pow;
+}

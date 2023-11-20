@@ -1,0 +1,161 @@
+/*
+ * 2．编写一个函数，提示用户输入日、月和年。月份可以是月份号、月份名或月份名缩写。然后该程序应返回一年中到用户指定日子（包括这一天）的总天数。
+ */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+#define LEN 10
+
+struct month {
+    char name[LEN];
+    char abbrev[4];
+    int days;
+    int monumb;
+};
+
+struct month months[12] =
+{
+    { "January", "jan", 31, 1 },
+    { "February", "feb", 28, 2 },
+    { "March", "mar", 31, 3 },
+    { "April", "apr", 30, 4 },
+    { "May", "may", 31, 5 },
+    { "June", "jun", 30, 6 },
+    { "July", "jul", 31, 7 },
+    { "August", "aug", 31, 8 },
+    { "September", "sep", 30, 9 },
+    { "October", "oct", 31, 10 },
+    { "November", "nov", 30, 11 },
+    { "December", "dec", 31, 12 }
+};
+
+char * s_gets(char * st, int n);
+int days(int year,int month,int day);
+char * TOLOWER(char * st);
+int isleapyear(int year);
+int yearstrtonum(char * yearstr);
+int daystrtonum(int year,int month,char * daystr);
+int monthstrtonum(char * motnstr);
+
+int main(void)
+{
+    char yearstr[LEN];
+    char daystr[LEN];
+    char monthstr[LEN];
+    int year,month,day;
+    int total;
+    puts("Enter a year :");
+    while(s_gets(yearstr,LEN) != NULL && yearstr[0] != '\0' && (year = yearstrtonum(yearstr)) != -1)
+    {
+        puts("Enter a month :");
+        while(s_gets(monthstr,LEN) == NULL || monthstr[0] == '\0' || (month = monthstrtonum(monthstr)) == -1)
+        {
+            puts("The month no right!Pleace enter again!");
+        }
+        
+        puts("Enter a day:");
+        while(s_gets(daystr,LEN) == NULL || daystr[0] == '\0' || (day = daystrtonum(year,month,daystr)) == -1)
+            puts("The day no right!Pleace enter again!");
+
+        if((total = days(year,month,day)) != -1)
+            printf("%d/%d/%d total days is %d\n",year,month,day,total);
+        puts("Enter a year :");
+    }
+    
+    return 0;
+}
+
+int monthstrtonum(char * motnstr)
+{
+    TOLOWER(motnstr);
+    int index = 0;
+    char monthname[LEN];
+    if((index = atoi(motnstr)) > 0 && index <= 12)
+        return index;
+
+    for(index = 0;index < 12; index++)
+    {
+        if(!strcmp(motnstr,months[index].abbrev))
+            return months[index].monumb;
+        strcpy(monthname,months[index].name);
+        TOLOWER(monthname);
+        if(!strcmp(monthname,motnstr))
+            return months[index].monumb;
+    }
+    return -1;
+}
+
+int yearstrtonum(char * yearstr)
+{
+    return atoi(yearstr);
+}
+
+int daystrtonum(int year,int month,char * daystr)
+{
+    int day = 0;
+    if((day = atoi(daystr)) <= 0 )
+        return -1;
+    
+    printf("%d %d %d\n",day,month,year);
+    if(month == 2 && isleapyear(year)) 
+        if(day <= 29)
+            return day;
+    if(day > months[month - 1].days)
+    {
+        return -1;
+    }
+    return day;
+}
+
+char * s_gets(char * st, int n)
+{
+    char *ret_val;
+    char *find;
+    ret_val = fgets(st,n,stdin);
+    if(ret_val)
+    {
+        find = strchr(st,'\n');
+        if(find)
+            *find = '\0';
+        else
+            while(getchar()!='\n')
+                continue;
+    }
+    return ret_val;
+}
+
+int days(int year,int month,int day)
+{
+    int index, total;
+    if (month < 1 || month > 12)
+        return(-1); /* error signal */
+    else
+    {
+        for (index = 0, total = 0; index < month - 1; index++)
+            if(index == 1 && isleapyear(year))
+                total += ( months[index].days + 1 );
+            else
+                total += months[index].days;
+        total += day;
+        return(total);
+    }
+}
+
+char * TOLOWER(char * st)
+{
+    char * ret_val;
+    ret_val = st;
+
+    while(*ret_val != '\0')
+    {
+        *ret_val = tolower(*ret_val);
+        ret_val++;
+    }
+    return st;
+}
+        
+int isleapyear(int year)
+{
+    return (year % 4 == 0 && year % 100 != 0 || year % 400 ==0); 
+}

@@ -1,0 +1,68 @@
+/*
+   8．修改练习7的假设a，让程序可以给出一个供选择的工资等级菜单。使用switch完成工资等级选择。运行程序后，显示的菜单应该类似这样：
+*****************************************************************
+Enter the number corresponding to the desired pay rate or action:
+1) $8.75/hr                        2) $9.33/hr
+3) $10.00/hr                       4) $11.20/hr
+5) quit
+*****************************************************************
+如果选择1～4其中的一个数字，程序应该询问用户工作的小时数。程序要通过循环运行，除非用户输入5。如果输入1～5以外的数字，程序应提醒用户输入正确的选项，然后再重复显示菜单提示用户输入。使用#define创建符号常量表示各工资等级和税率。
+*/
+#include<stdio.h> 
+#define LEVEL_ONE_HOURLY_SALARY 8.75    //第一等级时薪
+#define LEVEL_TWO_HOURLY_SALARY 9.33    //第二等级时薪
+#define LEVEL_THREE_HOURLY_SALARY 10.00    //第三等级时薪
+#define LEVEL_FOUR_HOURLY_SALARY 11.20    //第四等级时薪
+#define BASE_WORK_HOURS 40          //正常工作时长
+#define OVERTIME_MAGNIFICATION 1.5  //加班时长倍率
+#define TAX_LEVEL_ONE_RANGE 300     //税第一等级范围
+#define TAX_LEVEL_ONE_RATE 0.15     //税第一等级税率
+#define TAX_LEVEL_TWO_RANGE 150     //税第二等级范围
+#define TAX_LEVEL_TWO_RATE 0.2      //税第二等级税率
+#define TAX_LEVEL_OTHER_RATE 0.25   //剩下部分税率
+#define STOP 5
+
+int main(void)
+{
+    double salary =0.0;
+    int work_hours,salary_level;
+    double tax = 0.0;
+    double hour_salary = 0.0;
+    while(1)
+    {
+        printf("*****************************************************************\n");
+        printf("Enter the number corresponding to the desired pay rate or action:\n");
+        printf("1) $8.75/hr                        2) $9.33/hr\n");
+        printf("3) $10.00/hr                       4) $11.20/hr\n");
+        printf("5) quit\n");
+        printf("*****************************************************************\n");
+        if(scanf("%d",&salary_level)&&salary_level == STOP)
+            break;
+        switch(salary_level)
+        {
+            case 1: hour_salary = LEVEL_ONE_HOURLY_SALARY; 
+                    break;
+            case 2: hour_salary = LEVEL_TWO_HOURLY_SALARY; 
+                    break;
+            case 3: hour_salary = LEVEL_THREE_HOURLY_SALARY;
+                    break;
+            case 4: hour_salary = LEVEL_FOUR_HOURLY_SALARY;
+                    break;
+            case 5:
+                    break;
+            default: printf("Your input is not in the range of 1-5\n");
+                     continue;
+        }
+        printf("Enter how many hours you work in a week\n");
+        scanf("%d",&work_hours);
+        salary = hour_salary * (work_hours < BASE_WORK_HOURS ? work_hours : ( work_hours - BASE_WORK_HOURS ) * OVERTIME_MAGNIFICATION + BASE_WORK_HOURS);
+        if(salary <= TAX_LEVEL_ONE_RANGE)
+            tax = salary * TAX_LEVEL_ONE_RATE;
+        else if(salary <= TAX_LEVEL_ONE_RANGE + TAX_LEVEL_TWO_RANGE)
+            tax = TAX_LEVEL_ONE_RANGE * TAX_LEVEL_ONE_RATE + (salary -TAX_LEVEL_ONE_RANGE) * TAX_LEVEL_TWO_RATE;
+        else 
+            tax = TAX_LEVEL_ONE_RANGE * TAX_LEVEL_ONE_RATE +TAX_LEVEL_TWO_RANGE * TAX_LEVEL_TWO_RATE + (salary - TAX_LEVEL_ONE_RANGE - TAX_LEVEL_TWO_RANGE) * TAX_LEVEL_OTHER_RATE;
+    printf("salary = %0.3f,tax = %0.3f,left = %0.3f\n",salary,tax, salary - tax);
+    }
+   return 0;
+}

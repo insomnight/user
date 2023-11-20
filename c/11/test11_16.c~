@@ -1,0 +1,73 @@
+/*
+ * 16．编写一个程序读取输入，直至读到文件结尾，然后把字符串打印出来。该程序识别和实现下面的命令行参数：
+ * -p         按原样打印
+ * -u         把输入全部转换成大写
+ * -l         把输入全部转换成小写
+ * 如果没有命令行参数，则让程序像是使用了-p参数那样运行。
+ */
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+#define SIZE 2048
+
+char * getstr(char *s,int n);
+void print_source(const char *s);
+void print_upper(const char *s);
+void print_lower(const char *s);
+
+int main(int argc,char *argv[])
+{
+    char s[SIZE];
+    getstr(s,SIZE - 1);
+    
+    printf("%d\n", strcmp("-u",argv[1]));
+    if(argc < 2)
+        print_source(s);
+    else if ( !strcmp("-u",argv[1]))
+        print_upper(s);
+    else if ( !strcmp("-l",argv[1]))
+        print_lower(s); 
+    else if ( !strcmp("-p",argv[1]))
+        print_source(s);
+        
+    return 0;
+}
+
+
+char * getstr(char *s,int n)
+{
+    int i = 0;
+    while((*s = getchar()) !=EOF)
+    {
+        s++;
+        if(i >= n)
+        {
+            while(getchar()!=EOF)
+                continue;
+            break;
+        }
+        i++;
+    }
+    *s = '\0';
+    return s;
+}
+
+void print_source(const char *s)
+{
+    while(*s)
+        putchar(*s++);
+}
+
+void print_upper(const char *s)
+{
+    while(*s)
+        putchar(toupper(*s++));
+}
+
+void print_lower(const char *s)
+{
+
+    while(*s)
+        putchar(tolower(*s++));
+}
+

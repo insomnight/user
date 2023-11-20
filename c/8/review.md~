@@ -1,0 +1,68 @@
+# 8.10　复习题
+
+## 1．putchar(getchar())是一个有效表达式，它实现什么功能？getchar(putchar())是否也是有效表达式
+
+- 表达式putchar(getchar())使程序读取下一个输入字符并打印出来。getchar()的返回值是putchar()的参数。但getchar(putchar())是无效的表达式，因为getchar()不需要参数，而putchar()需要一个参数。
+
+## 2．下面的语句分别完成什么任务
+
+- a．putchar('H');
+
+```c
+显示字符H
+```
+
+- b．putchar('\007');
+
+```c
+如果系统使用ASCII,则发出一声警报
+```
+
+- c．putchar('\n');
+
+```c
+把光标移至下一行的开始
+```
+
+- d．putchar('\b');
+
+```c
+退后一格
+```
+
+## 3．假设有一个名为count的可执行程序，用于统计输入的字符数。设计一个使用count程序统计essay文件中字符数的命令行，并把统计结果保存在essayct文件中
+
+```c
+count <essay >essayct
+```
+
+## 4. 给定复习题3中的程序和文件,下列哪一条是有效的命令
+
+```c
+a. essayct <essay
+```
+
+```c
+b. count essay
+```
+
+```c
+c．essay >count
+```
+
+- 都不是有效命令
+
+## 5．EOF是什么
+
+- 5．EOF是由getchar()和scanf()返回的信号（一个特殊值），表明函数检测到文件结尾。
+
+## 6. 对于给定的输入（ch是int类型，而且是缓冲输入），下面各程序段的输出分别是什么
+
+- a．输入如下：
+
+```c
+If you quit, I will.[enter]
+```
+
+
+

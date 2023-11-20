@@ -1,0 +1,41 @@
+/*
+ * 4．编写一个程序，按顺序在屏幕上显示命令行中列出的所有文件。使用argc控制循环。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BUFF_SIZE 256
+
+void print_file(FILE * fp);
+
+int main(int argc,char * argv[])
+{
+    FILE * fp;
+
+    if(argc < 2)
+    {
+        fprintf(stderr,"Usage: %s filename1 filename2 filename3 ...",argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    for(int i = 0; i < argc; i++)
+    {
+        if((fp = fopen(argv[i],"r")) == NULL)
+        {
+            printf("Can't open %s\n",argv[i]);
+            continue;
+        }
+        printf("%s content:\n",argv[i]);
+        print_file(fp);
+        putchar('\n');
+    }
+
+    return 0;
+}
+
+void print_file(FILE * fp)
+{
+    static char buff[BUFF_SIZE];
+    while(fgets(buff,BUFF_SIZE,fp))
+        fputs(buff,stdout);
+}
