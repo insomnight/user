@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "..\lib\in.h"
+
+int rank(int key, int * a,int length);
+int intcompar(const void * a,const void *b);
+
+int main(int argc,char * argv[])
+{
+    int key;
+    int_arr whitelist;
+    readInts(&whitelist,argv[1]);
+    qsort(whitelist.data,whitelist.length,sizeof(int),intcompar);
+
+    while(scanf("%d",&key) == 1)
+    {
+        if(rank(key,whitelist.data,whitelist.length) < 0)
+            printf("%d\n",key);
+    }
+    free(whitelist.data);
+    return 0;
+}
+
+int rank(int key, int * a,int length)
+{
+    int lo = 0;
+    int hi = length -1;
+    while(lo <= hi)
+    {
+        int mid = lo + (hi - lo) / 2;
+        if(key < a[mid]) hi = mid - 1;
+        else if (key > a[mid]) lo = mid + 1;
+        else return mid;
+    }
+    return -1;
+}
+
+int intcompar(const void * a,const void * b)
+{
+    int * ia = (int *) a;
+    int * ib = (int *) b;
+    return *ia - *ib;
+}

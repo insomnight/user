@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+    double sum = 0.0;
+    int cnt = 0;
+    double num;
+    while (scanf("%lf",&num) == 1)
+    {
+        sum += num;
+        cnt++;
+    }
+    double avg = sum / cnt;
+    printf("Average is %.5f\n",avg);
+    return 0;
+}
