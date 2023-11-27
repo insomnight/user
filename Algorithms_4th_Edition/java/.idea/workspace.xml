@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Test1_1_11">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="java" />
@@ -68,6 +67,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test1_1_11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_1_11" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test1_1_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test1_1_3" />
       <module name="java" />
@@ -77,12 +83,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test1_1_11" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.RandomSeq" />
       <item itemvalue="Application.Test1_1_3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1_1_11" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test1_1_3" />
         <item itemvalue="Application.RandomSeq" />
@@ -109,6 +117,8 @@
       <workItem from="1701054595564" duration="814000" />
       <workItem from="1701057158599" duration="133000" />
       <workItem from="1701064204923" duration="483000" />
+      <workItem from="1701070383882" duration="12000" />
+      <workItem from="1701071273988" duration="662000" />
     </task>
     <servers />
   </component>

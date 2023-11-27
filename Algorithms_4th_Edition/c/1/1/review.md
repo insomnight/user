@@ -186,3 +186,85 @@ a. System.out.println('b');    //b,打印b字符
 b. System.out.println('b' + 'c');    //197,+运算会把char转换成int,再运算，b的ascii码是98,c的ascii码是99,所以相加等于197
 c. System.out.println((char) ('a' + 4));    //一开始过程类似，得到整数101,跟着强制类型转换为char,对应就是e
 ```
+
+## 1.1.9 编写一段代码，将一个正整数N用二进制表示并转换为一个String类型的值s
+
+解答：Java有一个内置方法Integer.toBinaryString(N)专门完成这个任务，但该题的目的就是给出这个方法的其他实现方法。下面就是一个特别简洁的答案：
+
+```java
+String s = "";
+for (int n = N; n ＞ 0; n /= 2)
+    s = (n % 2) + s;
+```
+
+```c
+#include <stdio.h>
+#define BSIZE 100
+
+char * itobitstr(char * bitstr,int bsize,int n);
+
+int main(void)
+{
+    char bs[BSIZE];
+    int n;
+    while(scanf("%d",&n) == 1)
+    {
+        itobitstr(bs,BSIZE,n);
+        printf("%d is %s\n",n,bs);
+    }
+    return 0;
+}
+
+char * itobitstr(char * bitstr,int bsize,int n)
+{
+    int top = 0;
+    char temp;
+    for(int i = n; i > 0; i /= 2)
+    {
+        bitstr[top] = '0' + i % 2;
+        top++;
+        if(top >= bsize)
+            break;
+    }
+    bitstr[top] = '\0';
+    for(int i = 0,j = top - 1; i < j; i++,j--)
+    {
+        temp = bitstr[i];
+        bitstr[i] = bitstr[j];
+        bitstr[j] = temp;
+    }
+    return bitstr;
+}
+```
+
+## 1.1.10 下面这段代码有什么问题
+
+```java
+int[] a;
+for (int i = 0; i ＜ 10; i++)
+    a[i] = i ＊ i;
+```
+
+```c
+在c里
+使用未初始化的指针的结果是未知的
+
+在java里:
+解答：它没有用new为a[]分配内存。这段代码会产生一个variable a might not have been initialized的编译错误。
+```
+
+## 1.1.11 编写一段代码，打印出一个二维布尔数组的内容。其中，使用＊表示真，空格表示假。打印出行号和列号
+
+```java
+public class Test1_1_11 {
+
+    public static void printfboolarray(boolean[][] arr)
+    {
+        for (int i = 0; i <arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.printf("%d - %d : %c\n",i,j,arr[i][j] ? '*':' ');;
+            }
+        }
+    }
+}
+```
