@@ -1,26 +1,12 @@
 #include <stdio.h>
-#define pf (getpf())
-
-FILE * getpf(void);
-int i = 12;
-
-static FILE * f = NULL;
+#include <math.h>
 
 int main(void)
 {
-    printf("%d\n",(0+15)/2);
-    printf("%lf\n",2.0e-6 * 100000000.1);
-    printf("%d\n",(1 && 0 || 1 && 1));
-    printf("1:%d\n",i);
-    fprintf(pf,"2:%d\n",i);
-    printf("3:%d\n",i);
+    int sum = 0;
+    for(int i = 1; i< 1000; i++)
+        for(int j = 0; j < i; j++)
+            sum++;
+    printf("%d",sum);
     return 0;
-}
-
-FILE * getpf(void)
-{
-    if(f == NULL)
-        return stdout;
-    else
-        return f;
 }

@@ -122,3 +122,59 @@ public class Test1_1_5 {
     }
 }
 ```
+
+## 1.1.6 下面这段程序会打印出什么
+
+```java
+int f = 0;
+int g = 1;
+for (int i = 0; i ＜= 15; i++)
+{
+    StdOut.println(f);
+    f = f + g;
+    g = f - g;
+}
+```
+
+```java
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610 
+```
+
+## 1.1.7 分别给出以下代码段打印出的值
+
+```java
+a. double t = 9.0;
+  while (Math.abs(t -9.0/t) ＞ .001)
+      t = (9.0/t + t) / 2.0;
+  StdOut.printf("%.5f\n", t);
+// 3.00009
+
+b. int sum = 0;
+  for (int i = 1; i ＜ 1000; i++)
+      for (int j = 0; j ＜ i; j++)
+          sum++;
+  StdOut.println(sum);
+// 499500
+
+c. int sum = 0;
+  for (int i = 1; i ＜ 1000; i ＊= 2)
+      for (int j = 0; j ＜ 1000; j++)
+          sum++;
+  StdOut.println(sum);
+// 10000
+```
