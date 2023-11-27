@@ -1,6 +1,6 @@
 ### IntelliJ IDEA ###
 Algorithms_4th_Edition/java/out/
-Algorithms_4th_Edition/java/.idea/
+## Algorithms_4th_Edition/java/.idea/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
