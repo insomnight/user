@@ -268,3 +268,30 @@ public class Test1_1_11 {
     }
 }
 ```
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define ROW 10
+#define COL 3
+
+void printboolarr(int row,int col,int arr[row][col]);
+
+int main(void)
+{
+    int arr[ROW][COL];
+    for(int i = 0; i < ROW; i++)
+        for(int j = 0; j < COL; j++)
+            arr[i][j] = rand() % 2;
+    printboolarr(ROW,COL,arr);
+    return 0;
+}
+
+void printboolarr(int row,int col,int arr[row][col])
+{
+    for(int i = 0; i < row; i++)
+        for(int j = 0; j < col; j++)
+            printf("%d - %d : %c\n",i,j,arr[i][j] ? '*' : ' ');
+}
+```
