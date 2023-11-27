@@ -178,3 +178,11 @@ c. int sum = 0;
   StdOut.println(sum);
 // 10000
 ```
+
+## 1.1.8 下列语句会打印出什么结果？给出解释
+
+```java
+a. System.out.println('b');    //b,打印b字符
+b. System.out.println('b' + 'c');    //197,+运算会把char转换成int,再运算，b的ascii码是98,c的ascii码是99,所以相加等于197
+c. System.out.println((char) ('a' + 4));    //一开始过程类似，得到整数101,跟着强制类型转换为char,对应就是e
+```
