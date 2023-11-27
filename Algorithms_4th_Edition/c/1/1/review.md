@@ -295,3 +295,28 @@ void printboolarr(int row,int col,int arr[row][col])
             printf("%d - %d : %c\n",i,j,arr[i][j] ? '*' : ' ');
 }
 ```
+
+## 1.1.12 以下代码段会打印出什么结果
+
+```java
+int[] a = new int[10];
+for (int i = 0; i ＜ 10; i++)
+    a[i] = 9- i;
+for (int i = 0; i ＜ 10; i++)
+    a[i] = a[a[i]];
+for (int i = 0; i ＜ 10; i++)
+    System.out.println(i);
+```
+
+```java
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
