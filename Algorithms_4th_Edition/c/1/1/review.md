@@ -469,3 +469,98 @@ public class Test1_1_15 {
     }
 }
 ```
+
+## 1.1.16 给出exR1(6)的返回值
+
+```java
+public static String exR1(int n)
+{
+    if (n ＜= 0) return "";
+    return exR1(n-3) + n + exR1(n-2) + n;
+}
+//311361142246
+6 exr1(3) + 6 + exr1(4) + 6;
+3 exr1(0) + 3 + exr1(1) + 3;
+4 exr1(1) + 4 + exr1(2) + 4;
+1 exr1(-2) + 1 + exr1(-1) + 1;
+2 exr1(-1) + 2 + exr1(0) + 2;
+```
+
+## 1.1.17 找出以下递归函数的问题
+
+```java
+public static String exR2(int n)
+{
+    String s = exR2(n-3) + n + exR2(n-2) + n;
+    if (n ＜= 0) return "";
+    return s;
+}
+```
+
+答：这段代码中的基础情况永远不会被访问。调用exR2(3)会产生调用exR2(0)、exR2(-3)和exR2(-6)，循环往复直到发生StackOverflowError。
+
+## 1.1.18 请看以下递归函数
+
+```java
+public static int mystery(int a, int b)
+{
+    if (b == 0)      return 0;
+    if (b % 2 == 0) return mystery(a+a, b/2);
+    return mystery(a+a, b/2) + a;
+}
+```
+
+- mystery(2, 25)和mystery(3, 11)的返回值是多少？
+  - mystery(2,25) = 50,mystery(3,11) = 33
+- 给定正整数a和b, mystery(a,b)计算的结果是什么？
+  - mystery(a,b) = a * b;
+- 将代码中的+替换为＊并将return 0改为return 1，然后回答相同的问题。
+  - mystery(2,25) = 33554432,mystery(3,11) = 177147
+  - mystery(a,b) = a 的 b 次方;
+
+## 1.1.19 在计算机上运行以下程序
+
+```java
+public class Fibonacci
+{
+    public static long F(int N)
+    {
+      if (N == 0) return 0;
+      if (N == 1) return 1;
+      return F(N-1) + F(N-2);
+    }
+    public static void main(String[] args)
+    {
+      for (int N = 0; N ＜ 100; N++)
+          StdOut.println(N + " " + F(N));
+    }
+}
+```
+
+计算机用这段程序在一个小时之内能够得到F(N)结果的最大N值是多少？开发F(N)的一个更好的实现，用数组保存已经计算过的值。
+
+- 一个小时内能够最大N值是56
+
+```java
+import edu.princeton.cs.algs4.StdOut;
+import java.math.BigInteger;
+import java.util.Objects;
+
+public class Fibonacci
+{
+    public static BigInteger[] fb = new BigInteger[1000];
+    public static BigInteger F(int N)
+    {
+        if (N == 0) return new BigInteger("0");
+        if (N == 1) return new BigInteger("1");
+        if(Objects.nonNull(fb[N])) return fb[N];
+        fb[N] = F(N-1).add(F(N-2));
+        return fb[N];
+    }
+    public static void main(String[] args)
+    {
+        for (int i = 0; i < 100; i++)
+            StdOut.println(i + " " + F(i));
+    }
+}
+```
