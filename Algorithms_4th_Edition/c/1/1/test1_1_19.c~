@@ -1,0 +1,27 @@
+/*
+ */
+#include <stdio.h>
+#define SIZE 1000
+
+static long fb[1000]; 
+
+long F(int N);
+
+int main(void)
+{
+    for(int i = 0; i < 100; i++)
+        printf("%d %ld",i,F(i));
+    return 0;
+}
+
+long F(int N)
+{
+    if(N == 0) return 0;
+    if(N == 1) return 1;
+    if(fb[N] !=0) return fb[N];
+    fb[N] = F(N-1) + F(N-2);
+    return fb[N];
+}
+
+
+
