@@ -89,10 +89,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test1_1_20" />
       <item itemvalue="Application.Fibonacci" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test1_1_11" />
+      <item itemvalue="Application.Test1_1_20" />
       <item itemvalue="Application.Test1_1_3" />
     </list>
     <recent_temporary>
