@@ -424,3 +424,35 @@ public class Test1_1_14 {
     }
 }
 ```
+
+## 1.1.15 编写一个静态方法histogram()，接受一个整型数组a[]和一个整数M为参数并返回一个大小为M的数组，其中第i个元素的值为整数i在参数数组中出现的次数。如果a[]中的值均在0到M-1之间，返回数组中所有元素之和应该和a.length相等
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+int * histogram(int a[],int asize,int m);
+
+int main(void)
+{
+    int a[SIZE] = {1,2,3,4,5,6,7,8,9,11};
+    int * result;
+    result = histogram(a,SIZE,SIZE + 1);
+
+    for(int i = 0; i < SIZE + 1; i++)
+        printf("%d ",result[i]);
+    free(result);
+    return 0;
+}
+
+int * histogram(int a[],int asize,int m)
+{
+    int * result;
+    result = calloc(m,sizeof(int));
+    for(int i = 0; i < asize; i++)
+        if(a[i] >= 0 && a[i] < m)
+            result[a[i]]++;
+    return result;
+}
+```
