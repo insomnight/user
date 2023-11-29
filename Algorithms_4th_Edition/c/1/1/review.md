@@ -872,3 +872,129 @@ public class Euclid {
     }
 }
 ```
+
+## 1.1.25 使用数学归纳法证明欧几里得算法能够计算任意一对非负整数p和q的最大公约数
+
+**基本情况:** 当q等于0时，根据欧几里得算法，最大公约数为p。这是基本情况下的成立条件。
+
+**归纳假设:** 假设当q小于某个正整数k时，欧几里得算法能够正确计算p和q的最大公约数。
+
+**归纳步骤:** 我们需要证明当q等于k时，欧几里得算法也能够正确计算p和q的最大公约数。
+
+根据欧几里得算法，我们将p除以q得到商q'和余数r（p=qq'+r），其中r小于q。因为r=q-1q'，所以r也是q的因数。因此，任意整数能够整除p和q的数，也能够整除q和r。
+
+假设d是p和q的最大公约数，那么d也是q和r的公约数。因为d是p和q的最大公约数，所以任何其他的公约数都不能大于d。对于q和r，任何能够整除q和r的数也能够整除p和q，因此任何小于d的数也不能是q和r的公约数。所以，d是q和r的最大公约数。
+
+根据归纳假设和归纳步骤，我们可以得出结论：欧几里得算法能够计算任意一对非负整数p和q的最大公约数。
+
+欧几里得算法的原理是 GCD递归定理
+
+GCD递归定理：
+
+对任意 非负整数 a 和 任意 整数 b，gcd(a,b) = gcd(b, a mod b)
+为了证明这个定理，我们首先需要知道一下几个有关 gcd 的基本知识跟相关等式跟推论
+
+1.1 基本知识：
+
+公约数
+
+定义：如果 d|a（d 整除 a）且 d|b，那么 d 是 a 与 b 的 公约数。
+
+性质：如果 d|a 且 d|b，那么 d|(ax + by); x,y ∈ Z(任意整数)
+
+最大公约数
+
+定义：两个非零整数 a 和 b 的公约数里最大的就是 最大公约数。
+
+1.2 相关等式跟推论：
+
+等式 1：如果 a|b 且 b|a 那么 a = ±b
+
+等式 2：如果 d|a 且 d|b 那么 d|(ax + by); x,y ∈ Z
+
+等式 3：a mod n = a - n⌊a/n⌋(向下整除); a∈Z,n∈N*(正整数)
+
+推论 1：对任意整数 a , b，如果 d|a 且 d|b 则 d|gcd(a, b)
+
+二、证明过程
+
+如果我们想要获得结论gcd(a,b) = gcd(b, a mod b)
+
+那么我们只需要证明gcd(a,b)|gcd(b, a mod b) 且 gcd(b,a mod b)|gcd(a,b)就可以利用等式 1来证明他俩相等了。
+
+2.1 证明 gcd(a,b)|gcd(b,a mod b)
+
+设 d = gcd(a, b)
+
+∴ d|a 且 d|b
+
+∵ 由 等式 3 可知：(a mod b) = a - qb q = ⌊a/b⌋
+
+∴ a mod b 是 a 与 b 的线性组合
+
+∴ 由 等式 2 可知 ：d|(a mod b)
+
+∵ d|b 且 d|(a mod b)
+
+∴ 由 推论 1 可知 d|gcd(b, a mod b)
+
+等价结论： gcd(a, b)|gcd(b, a mod b)
+
+2.2 证明 gcd(b,a mod b)|gcd(a,b)
+
+设 c = gcd(b, a mod b)
+
+∴ c|b 且 c|(a mod b)
+
+∵ a = qb + r
+
+​ r = a mod b
+
+​ q = ⌊a/b⌋
+
+∴ a 是 b 和 (a mod b) 的线性组合
+
+∴ 由 等式 2 可知：c|a
+
+∵ c|a 且 c|b
+
+∴ 由 推论 1 可知：c|gcd(a, b)
+
+等价结论： gcd(b, a mod b)|gcd(a, b)s
+
+2.3 证明 gcd(a,b) = gcd(b, a mod b)
+
+由 上述两个结论 可知：
+
+gcd(a, b)|gcd(b, a mod b)
+
+gcd(b, a mod b)|gcd(a, b)
+
+∴ 由 等式 1 可知：
+
+​ gcd(a, b) = gcd(b, a mod b)
+
+到这里 GCD递归定理 就证明结束了
+
+## 1.1.26 将三个数字排序。假设a、b、c和t都是同一种原始数字类型的变量。证明以下代码能够将a、b、c按照升序排列
+
+```c
+if (a ＞ b) { t = a; a = b; b = t; }
+if (a ＞ c) { t = a; a = c; c = t; }
+if (b ＞ c) { t = b; b = c; c = t; }
+```
+
+由以上代码可以得到,a <= b,a <= c,b <= c,所以a<=b<=c.所以a,b,c按照升序排列
+
+## 1.1.27 二项分布。估计用以下代码计算binomial(100, 50, 0.25)将会产生的递归调用次数
+
+```java
+public static double binomial(int N, int k, double p)
+{
+    if (N == 0 && k == 0) return 1.0;
+    if (N ＜ 0 || k ＜ 0) return 0.0;
+    return (1.0- p)＊binomial(N-1, k, p) + p＊binomial(N-1, k-1, p);
+}
+```
+
+将已经计算过的值保存在数组中并给出一个更好的实现。
