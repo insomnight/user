@@ -663,3 +663,34 @@ public class Test1_1_21 {
     }
 }
 ```
+
+## 1.1.22 使用1.1.6.4节中的rank()递归方法重新实现BinarySearch并跟踪该方法的调用。每当该方法被调用时，打印出它的参数lo和hi并按照递归的深度缩进。提示：为递归方法添加一个参数来保存递归的深度
+
+```c
+#include <stdio.h>
+#define SIZE 100
+
+int rank(int key, int a[], int lo, int hi, int deep);
+
+int main(void)
+{
+    int a[SIZE];
+    int key;
+    for(int i = 0; i < SIZE; i++)
+        a[i] = i;
+    while(scanf("%d",&key) == 1)
+        rank(key,a,0,SIZE - 1,0);
+    return 0;
+}
+
+int rank(int key, int a[], int lo, int hi, int deep)
+{
+    printf("lo = %d, hi = %d, deep = %d\n", lo, hi, deep);
+    int mid;
+    if( lo > hi ) return -1;
+    mid = lo + (hi - lo) / 2;
+    if(key < a[mid]) return rank(key, a, lo, mid - 1,deep + 1);
+    else if(key > a[mid]) return rank(key, a, mid + 1, hi,deep + 1);
+    else return mid;
+}
+```
