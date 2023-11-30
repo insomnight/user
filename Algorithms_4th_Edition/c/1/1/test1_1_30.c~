@@ -1,0 +1,69 @@
+/*
+ * 1.1.30 数组练习。编写一段程序，创建一个N×N的布尔数组a[][]。其中当i和j互质时（没有相同因子）, a[i][j]为true，否则为false。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+/*
+ * 创建一个n * n的布尔数组a[][].其中当i和j互质时,a[i][j]为true,否则为false.
+ * 参数: n - 二维数组行列大小
+ * 返回: 返回二维数组的指针.ps:使用注意free创建的内存
+ */
+bool ** boolarr(int n);
+
+int gcd(int p, int q);
+
+int main(void)
+{
+    bool ** arr;
+    int n;
+    while(scanf("%d",&n)==1)
+    {
+        arr = boolarr(n);
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++)
+                printf("%5s ", arr[i][j] ? "true" : "false");
+            putchar('\n');
+        }
+        putchar('\n');
+        free(arr);
+    }
+    return 0;
+}
+
+/*
+ * 创建一个n * n的布尔数组a[][].其中当i和j互质时,a[i][j]为true,否则为false.
+ * 参数: n - 二维数组行列大小
+ * 返回: 返回二维数组的指针.ps:使用注意最后要free()创建的内存
+ */
+bool ** boolarr(int n)
+{
+    bool ** arr;
+    arr = (bool **) malloc(n * sizeof(bool *));
+    if(arr == NULL)
+    {
+        fprintf(stderr,"Create the n * n arr failure");
+        exit(EXIT_FAILURE);
+    }
+    for(int i = 0; i < n; i++)
+        arr[i] = (bool *) malloc(n * sizeof(bool));
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n;j++)
+            if(gcd(i,j) == 1)
+                arr[i][j] = true;
+            else
+                arr[i][j] = false;
+    return arr;
+}
+
+int gcd(int p, int q)
+{
+    if(q == 0) return p;
+    int r = p % q;
+    return gcd(q,r);
+}
+
+
