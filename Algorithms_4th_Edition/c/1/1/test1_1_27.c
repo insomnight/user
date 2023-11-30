@@ -13,22 +13,35 @@
 double blarr[200][200] = {0.0};
 
 double binomial(int n, int k, double p);
+double binomial1(int n, int k, double p);
 
 int main(void)
 {
-    double result;
-    result = binomial(100, 50, 0.25);
-    printf("binomial(100, 50, 0.25) = %lf\n",result);
+    double result,p;
+    int n,k;
+    while(scanf("%d%d%lf",&n,&k,&p) == 3)
+    {
+        result = binomial(n, k, p);
+        printf("binomial(%d, %d, %lf) = %lf\n",n,k,p,result);
+        result = binomial1(n, k, p);
+        printf("binomial1(%d, %d, %lf) = %lf\n",n,k,p,result);
+    }
     return 0;
 }
 
 double binomial(int n, int k, double p)
 {
-    printf("n = %d, k = %d, p = %lf, blarr[%d][%d] = %lf\n",n,k,p,n,k,blarr[n + 1][k + 1]);
     if(n == 0 && k == 0) return 1.0;
     if(n < 0 || k < 0) return 0.0;
     if(blarr[n + 1][k + 1] != 0.0) return blarr[n + 1][k + 1] - 1;
-    blarr[n + 1][k + 1] = (1.0 - p) * binomial(n - 1,k,p) + p * binomial(n - 1, k - 1, p);
-    blarr[n + 1][k + 1] += 1;
+    blarr[n + 1][k + 1] = (1.0 - p) * binomial(n - 1,k,p) + p * binomial(n - 1, k - 1, p) + 1;
     return blarr[n + 1][k + 1] - 1;
+}
+
+double binomial1(int n, int k, double p)
+{
+    if(n == 0 && k == 0) return 1.0;
+    if(n < 0 || k < 0) return 0.0;
+    return (1.0 - p) * binomial(n - 1,k,p) + p * binomial(n - 1, k - 1, p);
+ 
 }
