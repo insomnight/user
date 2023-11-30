@@ -76,6 +76,8 @@ int count(int key, const int * a,int length)
     int cnt = 1;
     int mid;
     mid = rank(key,a,length);
+    if(mid == -1)
+        return -1;
     //向前统计
     for(int i = mid; i > 0 && a[i] == a[i - 1]; i--)
         cnt++;

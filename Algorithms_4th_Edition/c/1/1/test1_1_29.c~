@@ -22,7 +22,7 @@ int main(int argc,char * argv[])
     while(scanf("%d",&key) == 1)
     {
         i = rankmin(key,whitelist.data,whitelist.length);
-        j = rankmin(key,whitelist.data,whitelist.length);
+        j = count(key,whitelist.data,whitelist.length);
         printf("i = %d, j = %d\n", i, j);
     }
     free(whitelist.data);
