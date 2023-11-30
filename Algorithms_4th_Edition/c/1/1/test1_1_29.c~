@@ -1,0 +1,93 @@
+/*
+ * 1.1.29 等值键。为BinarySearch类添加一个静态方法rank()，它接受一个键和一个整型有序数组（可能存在重复键）作为参数并返回数组中小于该键的元素数量，以及一个类似的方法count()来返回数组中等于该键的元素的数量。注意：如果i和j分别是rank(key, a)和count(key, a)的返回值，那么a[i..i+j-1]就是数组中所有和key相等的元素。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "..\..\lib\in.h"
+
+int rank(int key,const int * a,int length);
+int rankmin(int key, int * a,int length);
+int intcompar(const void * a,const void *b);
+int count(int key, const int * a,int length);
+void printarr(const int * a, int n);
+
+int main(int argc,char * argv[])
+{
+    int key;
+    int i,j;
+    int_arr whitelist;
+    readInts(&whitelist,argv[1]);
+    qsort(whitelist.data,whitelist.length,sizeof(int),intcompar);
+    printarr(whitelist.data,whitelist.length);
+    while(scanf("%d",&key) == 1)
+    {
+        i = rankmin(key,whitelist.data,whitelist.length);
+        j = rankmin(key,whitelist.data,whitelist.length);
+        printf("i = %d, j = %d\n", i, j);
+    }
+    free(whitelist.data);
+    return 0;
+}
+
+int rank(int key,const int * a,int length)
+{
+    int lo = 0;
+    int hi = length -1;
+    while(lo <= hi)
+    {
+        int mid = lo + (hi - lo) / 2;
+        if(key < a[mid]) hi = mid - 1;
+        else if (key > a[mid]) lo = mid + 1;
+        else return mid;
+    }
+    return -1;
+}
+
+int intcompar(const void * a,const void * b)
+{
+    int * ia = (int *) a;
+    int * ib = (int *) b;
+    return *ia - *ib;
+}
+
+/*
+ * 在长度为length的有序数组a中找到比key小的元素个数
+ * 参数: key - int类型的要查找比较的数
+ * 参数: a - 有序的数组a
+ * 参数: length - 数组长度
+ * return: 返回比key小的元素个数 
+ */
+int rankmin(int key, int * a,int length)
+{
+    int mid;
+    // 二分查找到的位置
+    mid = rank(key,a,length);
+    while(0 < mid)
+    {
+        if(a[mid] != a[mid - 1])
+            break;
+        mid--;
+    }
+    return mid;
+}
+
+int count(int key, const int * a,int length)
+{
+    int cnt = 1;
+    int mid;
+    mid = rank(key,a,length);
+    //向前统计
+    for(int i = mid; i > 0 && a[i] == a[i - 1]; i--)
+        cnt++;
+    //向后统计
+    for(int i = mid; i < length - 1 && a[i] == a[i + 1]; i++)
+        cnt++;
+    return cnt;
+}
+
+void printarr(const int * a, int n)
+{
+    for(int i = 0; i < n; i++)
+        printf("%d%c",a[i], (i + 1) % 5 ? ' ':'\n');
+    putchar('\n');
+}
