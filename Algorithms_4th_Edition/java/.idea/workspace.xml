@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../c/1/1/review.md" beforeDir="false" afterPath="$PROJECT_DIR$/../c/1/1/review.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,18 +52,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Test1_1_31">
+  <component name="RunManager" selected="Application.Test1_1_32">
     <configuration name="Euclid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Euclid" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="1111111 1234567" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Fibonacci" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Fibonacci" />
-      <module name="java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,20 +84,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test1_1_32" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_1_32" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="9 1 10" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/../../../test.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Test1_1_32" />
       <item itemvalue="Application.Test1_1_31" />
       <item itemvalue="Application.Euclid" />
       <item itemvalue="Application.Test1_1_21" />
-      <item itemvalue="Application.Fibonacci" />
       <item itemvalue="Application.Test1_1_20" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1_1_32" />
         <item itemvalue="Application.Test1_1_31" />
         <item itemvalue="Application.Euclid" />
         <item itemvalue="Application.Test1_1_21" />
         <item itemvalue="Application.Test1_1_20" />
-        <item itemvalue="Application.Fibonacci" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +156,10 @@
       <workItem from="1701336745062" duration="405000" />
       <workItem from="1701388699963" duration="4248000" />
       <workItem from="1701393093800" duration="59000" />
+      <workItem from="1701394238642" duration="21000" />
+      <workItem from="1701394344456" duration="4000000" />
+      <workItem from="1701398671172" duration="1507000" />
+      <workItem from="1701400331132" duration="261000" />
     </task>
     <servers />
   </component>
