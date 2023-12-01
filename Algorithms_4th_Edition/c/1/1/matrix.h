@@ -1,0 +1,59 @@
+/*
+ * 矩阵库
+ */
+#ifndef MATRIX_H
+#define MATRIX_H
+
+/**
+ * 向量点乘
+ * param x[] 向量x数组,x与y长度必须相等
+ * param y[] 向量x数组,x与y长度必须相等
+ * param n 向量x与y的长度
+ * return 返回矢量x和矢量y的內积
+ */
+double dot(double x[],double y[],int n);
+
+/**
+ * 矩阵和矩阵之积
+ * param arow 矩阵a的行数
+ * param acol 矩阵a的列数
+ * param b brow行,bcol列的二维数组(代表矩阵)
+ * param brow 矩阵b的行数
+ * param bcol 矩阵b的列数
+ * param a arow行,acol列的二维数组(代表矩阵)
+ * param result 提供存放结果的二维数组(代表矩阵),行等于arow,列等于bcol
+ */
+void mult(int arow,int acol,const double a[arow][acol],int brow,int bcol,const double b[brow][bcol],double result[arow][bcol]);
+
+/**
+ * 转置矩阵
+ * param arow 矩阵a的行数
+ * param acol 矩阵a的列数
+ * param a 要转置的矩阵a
+ * param result 提供存放结果的二维数组(代表矩阵),行等于acol,列等于arow
+ */
+void transpose(int arow,int acol,const double a[arow][acol],double result[acol][arow]);
+
+/**
+ * 矩阵和向量之积
+ * param arow 矩阵a的行数
+ * param acol 矩阵a的列数
+ * param a 矩阵a
+ * param x 向量x,长度等于a的行数arow
+ * param result 存放结果的向量,长度为arow;
+ * return 返回指向相乘后结果一维数组的指针
+ */
+double * matr_vect_mult(int arow,int acol,const double a[arow][acol],const double * x,double * result);
+
+/**
+ * 向量和矩阵之积
+ * param arow 矩阵a的行数
+ * param acol 矩阵a的列数
+ * param y 向量y,长度等于a的列数acol
+ * param a 矩阵a
+ * param result 存放结果的向量,长度为acol;
+ * return 返回指向相乘后结果一维数组的指针
+ */
+double * vect_matr_mult(int arow,int acol,const double * y,const double a[arow][acol],double * result);
+
+#endif
