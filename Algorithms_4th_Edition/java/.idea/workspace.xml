@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../c/1/1/review.md" beforeDir="false" afterPath="$PROJECT_DIR$/../c/1/1/review.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +51,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Test1_1_32">
+  <component name="RunManager" selected="Application.ShuffleTest">
     <configuration name="Euclid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Euclid" />
       <module name="java" />
@@ -61,9 +60,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1_1_20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test1_1_20" />
+    <configuration name="ShuffleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShuffleTest" />
       <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="10 1000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,19 +95,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ShuffleTest" />
       <item itemvalue="Application.Test1_1_32" />
       <item itemvalue="Application.Test1_1_31" />
       <item itemvalue="Application.Euclid" />
       <item itemvalue="Application.Test1_1_21" />
-      <item itemvalue="Application.Test1_1_20" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShuffleTest" />
         <item itemvalue="Application.Test1_1_32" />
         <item itemvalue="Application.Test1_1_31" />
         <item itemvalue="Application.Euclid" />
         <item itemvalue="Application.Test1_1_21" />
-        <item itemvalue="Application.Test1_1_20" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +163,7 @@
       <workItem from="1701474057093" duration="2627000" />
       <workItem from="1701486587819" duration="1421000" />
       <workItem from="1701499146739" duration="1579000" />
+      <workItem from="1701502955006" duration="490000" />
     </task>
     <servers />
   </component>
