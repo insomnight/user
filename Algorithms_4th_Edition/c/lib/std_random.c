@@ -52,3 +52,54 @@ double uniformDoubleL2H(double low,double hight)
     }
     return low + uniformDouble() * (hight - low);
 }
+
+/*
+ * returns a random integer uniformly in [0,n).
+ * params: n - number of possible integers
+ * return: a random integer uniformly between 0 (inclusive) and n (exclusive)
+ */
+int uniformInt(int n)
+{
+    if(n <= 0)
+    {
+        fprintf(stderr,"argument must be positive: %d\n",n);
+        exit(EXIT_FAILURE);
+    }
+    int result;
+    result = rand() % n;
+    return result;
+}
+
+/*
+ * Rearranges the elements of the specified array in uniformly random order
+ * params: a - the array to shuffle
+ */
+void shuffleDoubles(double a[],int n)
+{
+    int r;
+    double temp;
+    for(int i = 0; i < n; i++)
+    {
+        r = i + uniformInt( n - i );
+        temp = a[i];
+        a[i] = a[r];
+        a[r] = temp;
+    }
+}
+
+/*
+ * Rearranges the elements of the specified array in uniformly random order
+ * params: a - the array to shuffle
+ */
+void shuffleInts(int a[],int n)
+{
+    int r;
+    int temp;
+    for(int i = 0; i < n; i++)
+    {
+        r = i + uniformInt( n - i );
+        temp = a[i];
+        a[i] = a[r];
+        a[r] = temp;
+    }
+}

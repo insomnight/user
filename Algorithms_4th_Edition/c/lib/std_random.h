@@ -30,4 +30,23 @@ double uniformDouble();
  */
 double uniformDoubleL2H(double low,double hight);
 
+/*
+ * returns a random integer uniformly in [0,n).
+ * params: n - number of possible integers
+ * return: a random integer uniformly between 0 (inclusive) and n (exclusive)
+ */
+int uniformInt(int n);
+
+/*
+ * Rearranges the elements of the specified array in uniformly random order
+ * params: a - the array to shuffle
+ */
+void shuffleDoubles(double a[],int n);
+
+/*
+ * Rearranges the elements of the specified array in uniformly random order
+ * params: a - the array to shuffle
+ */
+void shuffleInts(int a[],int n);
+
 #endif
