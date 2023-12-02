@@ -1,0 +1,53 @@
+/*
+ * dist[i]的值就是两个骰子之和为i的概率。用实验模拟N次掷骰子，并在计算两个1到6之间的随机整数之和时记录每个值的出现频率以验证它们的概率。N要多大才能够保证你的经验数据和准确数据的吻合程度达到小数点后三位？
+ */
+#include <stdio.h>
+#include <math.h>
+#include "diceroll.h"
+#define SIDES 6
+#define DICE 2
+
+int main(void)
+{
+    double dist[ DICE * SIDES + 1] = { 0.0 };
+    int n, roll,flag;
+    for(int i = 1; i <= SIDES; i++)
+        for(int j = 1; j <= SIDES; j++)
+            dist[i+j] += 1.0;
+    for(int k =DICE; k <= DICE* SIDES; k++)
+        dist[k] /= 36.0;
+
+    double disttest[DICE * SIDES + 1] = { 0.0 };
+    
+    n = 1;
+    while(1)
+    {
+        flag = 1;
+        for(int i = 0; i < n; i++)
+        {
+            roll = roll_n_dice(DICE,SIDES); 
+            disttest[roll] += 1.0;
+        }
+
+        puts("theory: ");
+        for(int k =DICE; k <= DICE* SIDES; k++)
+            printf("%8.4lf ", dist[k]);
+        putchar('\n');
+        puts("mock: ");
+        for(int i = DICE; i <= DICE * SIDES; i++)
+        {
+            disttest[i] /= n;
+            printf("%8.4lf ", disttest[i]);
+            if(fabs(disttest[i] - dist[i]) >= 0.0001)
+                flag = 0;
+        }
+        putchar('\n');
+        if(flag)
+        {
+            printf("the n = %d mock data and theory beetween less 0.001\n",n);
+            break;
+        }
+        n++;
+    }
+    return 0;
+}
