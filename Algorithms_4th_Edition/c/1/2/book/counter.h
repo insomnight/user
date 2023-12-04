@@ -29,4 +29,6 @@ void increment(Counter *c);
  */
 int tally(const Counter *c);
 
+void counterString(const Counter * c,char * st,int n);
+
 #endif

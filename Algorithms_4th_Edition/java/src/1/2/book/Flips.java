@@ -14,6 +14,6 @@ public class Flips {
         StdOut.println(heads);
         StdOut.println(tails);
         int d = heads.tally() - tails.tally();
-        StdOut.printf("delta: %d",d);
+        StdOut.printf("delta: %d",Math.abs(d));
     }
 }
