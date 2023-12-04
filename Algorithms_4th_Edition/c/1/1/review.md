@@ -2074,7 +2074,7 @@ public class Test1_1_37 {
   - 234.9867007s
   - ![binarySearch运行时间](bitest.png "binarySearch运行时间")
 - BruteForceSearch:
-  - 111.s
+  - 2728.483706s
 
 ## 1.1.39 随机匹配。编写一个使用BinarySearch的程序，它从命令行接受一个整型参数T，并会分别针对N=10e3、10e4、10e5和10e6将以下实验运行T遍：生成两个大小为N的随机6位正整数数组并找出同时存在于两个数组中的整数的数量。打印一个表格，对于每个N，给出T次实验中该数量的平均值
 
