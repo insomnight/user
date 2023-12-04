@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1/1/Test1_1_39.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/1/Test1_1_39.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1/2/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/2/book/Counter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,27 +35,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/user/Algorithms_4th_Edition/java/lib&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/user/Algorithms_4th_Edition/java/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/user/Algorithms_4th_Edition/java/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "E:/user/Algorithms_4th_Edition/java/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.ShuffleTest">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Flips">
     <configuration name="Euclid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Euclid" />
       <module name="java" />
@@ -61,18 +70,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShuffleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ShuffleTest" />
+    <configuration name="Flips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Flips" />
       <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="10 1000" />
+      <option name="PROGRAM_PARAMETERS" value="1000000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1_1_21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test1_1_21" />
+    <configuration name="ShuffleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShuffleTest" />
       <module name="java" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/../c/1/1/data21.txt" />
+      <option name="PROGRAM_PARAMETERS" value="10 1000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,19 +105,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Flips" />
       <item itemvalue="Application.ShuffleTest" />
       <item itemvalue="Application.Test1_1_32" />
       <item itemvalue="Application.Test1_1_31" />
       <item itemvalue="Application.Euclid" />
-      <item itemvalue="Application.Test1_1_21" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Flips" />
         <item itemvalue="Application.ShuffleTest" />
         <item itemvalue="Application.Test1_1_32" />
         <item itemvalue="Application.Test1_1_31" />
         <item itemvalue="Application.Euclid" />
-        <item itemvalue="Application.Test1_1_21" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +176,7 @@
       <workItem from="1701502955006" duration="490000" />
       <workItem from="1701506586917" duration="324000" />
       <workItem from="1701651669001" duration="1326000" />
-      <workItem from="1701679455300" duration="423000" />
+      <workItem from="1701679455300" duration="1115000" />
     </task>
     <servers />
   </component>

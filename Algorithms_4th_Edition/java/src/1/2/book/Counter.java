@@ -25,6 +25,6 @@ public class Counter {
 
     @Override
     public String toString() {
-        return id + ": " +data;
+        return data + " " + id;
     }
 }

@@ -1,6 +1,5 @@
 import edu.princeton.cs.algs4.StdRandom;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Test1_1_39 {
