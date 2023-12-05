@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
             increment(&tails);
     counterString(&heads,str,CLEN);
     printf("%s\n",str);
-    counterString(&tails,str,CLEN);
+    counterString(&heads,str,CLEN);
     printf("%s\n",str);
 
     int d = tally(&heads) - tally(&tails);

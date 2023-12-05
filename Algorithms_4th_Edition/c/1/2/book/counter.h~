@@ -4,10 +4,8 @@
 #ifndef COUNTER_H
 #define COUNTER_H
 
-typedef int counter_type;
-
 typedef struct counter {
-    counter_type data;
+    int data;
     char * id;
 } Counter;
 
@@ -29,7 +27,7 @@ void increment(Counter *c);
  * param: c是计数器存储的数据指针
  * return: 返回被加1的次数
  */
-counter_type tally(const Counter *c);
+int tally(const Counter *c);
 
 void counterString(const Counter * c,char * st,int n);
 

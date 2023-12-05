@@ -14,7 +14,7 @@ typedef struct counter {
  * param: c - 计数器存储的数据对象
  * param: id - 初始化计数器名字的
  */ 
-void initCounter(Counter *c,const char * id);
+void initCounter(Counter *c,char * id);
 
 /**
  * 将计数器的值加1

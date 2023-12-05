@@ -43,4 +43,10 @@ int uniformInt(int n);
  */
 void shuffleDoubles(double a[],int n);
 
+/*
+ * Rearranges the elements of the specified array in uniformly random order
+ * params: a - the array to shuffle
+ */
+void shuffleInts(int a[],int n);
+
 #endif

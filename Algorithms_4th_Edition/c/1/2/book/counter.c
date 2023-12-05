@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include "counter.h"
 
 /**
  * 初始化一个名为id的计数器
  * param: c - 计数器存储的数据对象
  * param: id - 初始化计数器名字的
  */ 
-void initCounter(Counter *c,const char * id)
+void initCounter(Counter *c,char * id)
 {
     c->id = id;
     c->data = 0;

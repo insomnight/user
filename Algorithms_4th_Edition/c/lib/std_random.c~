@@ -92,6 +92,7 @@ void shuffleDoubles(double a[],int n)
  * params: a - the array to shuffle
  */
 void shuffleInts(int a[],int n)
+{
     int r;
     int temp;
     for(int i = 0; i < n; i++)
@@ -101,3 +102,4 @@ void shuffleInts(int a[],int n)
         a[i] = a[r];
         a[r] = temp;
     }
+}
