@@ -49,4 +49,12 @@ void shuffleDoubles(double a[],int n);
  */
 void shuffleInts(int a[],int n);
 
+/**
+ * returns a random boolean from Bernoulli distribution with success probability p.
+ * params: p - the probability of returning true
+ * returns: 1 with probability p and 0 with probability 1 - p;
+ * Threows: IlleagelArgumentException - unless 0 <= p <= 1.0
+ */ 
+int bernoulli(double p);
+
 #endif

@@ -57,4 +57,12 @@ void shuffleInts(int a[],int n);
  */ 
 int bernoulli(double p);
 
+/**
+ * Returns a random integer uniformly in [a,b).
+ * Params: l - the left endpoint
+ * Params: b - the right endpoint
+ * Returns: a random integer uniformly in [a,b)
+ */
+int uniformIntL2H(int l,int h);
+
 #endif

@@ -119,3 +119,20 @@ int bernoulli(double p)
     }
     return uniformDouble() < p; 
 }
+
+/**
+ * Returns a random integer uniformly in [a,b).
+ * Params: l - the left endpoint
+ * Params: b - the right endpoint
+ * Returns: a random integer uniformly in [a,b)
+ */
+int uniformIntL2H(int l,int h)
+{
+    if(h <= l)
+    {
+        fprintf(stderr,"invalid range: [ \"%d\", \"%d\")",l,h);
+        exit(EXIT_FAILURE);
+    }
+    return l + uniformInt(h - l);
+
+}

@@ -103,3 +103,32 @@ void shuffleInts(int a[],int n)
         a[r] = temp;
     }
 }
+
+/**
+ * returns a random boolean from Bernoulli distribution with success probability p.
+ * params: p - the probability of returning true
+ * returns: 1 with probability p and 0 with probability 1 - p;
+ * Threows: IlleagelArgumentException - unless 0 <= p <= 1.0
+ */ 
+int bernoulli(double p)
+{
+    if(!(p>= 0.0 && p <= 1.0))
+    {
+        fprintf(stderr,"probability p must be between 0.0 and 1.0: %lf",p);
+        exit(EXIT_FAILURE);
+    }
+    return uniformDouble() < p; 
+}
+
+/**
+ * Returns a random integer uniformly in [a,b).
+ * Params: l - the left endpoint
+ * Params: b - the right endpoint
+ * Returns: a random integer uniformly in [a,b)
+ */
+int uniformIntL2H(int l,int h)
+{
+    if((b <= a))
+    {
+
+}
