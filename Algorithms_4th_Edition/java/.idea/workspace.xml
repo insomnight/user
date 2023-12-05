@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../c/1/2/book/flips.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/1/2/book/flips.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,20 +56,23 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Flips">
-    <configuration name="Euclid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Euclid" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="1111111 1234567" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.FlipsMax">
     <configuration name="Flips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Flips" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="1000000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlipsMax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FlipsMax" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="100000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,19 +104,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.FlipsMax" />
       <item itemvalue="Application.Flips" />
       <item itemvalue="Application.ShuffleTest" />
       <item itemvalue="Application.Test1_1_32" />
       <item itemvalue="Application.Test1_1_31" />
-      <item itemvalue="Application.Euclid" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FlipsMax" />
         <item itemvalue="Application.Flips" />
         <item itemvalue="Application.ShuffleTest" />
         <item itemvalue="Application.Test1_1_32" />
         <item itemvalue="Application.Test1_1_31" />
-        <item itemvalue="Application.Euclid" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +178,7 @@
       <workItem from="1701679455300" duration="1115000" />
       <workItem from="1701681537846" duration="42000" />
       <workItem from="1701682053078" duration="491000" />
+      <workItem from="1701746173455" duration="300000" />
     </task>
     <servers />
   </component>
