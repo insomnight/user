@@ -60,7 +60,15 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Rolls">
+  <component name="RunManager" selected="Application.Book_1_2_2_1">
+    <configuration name="Book_1_2_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Book_1_2_2_1" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value=".2 .5 .5 .6 100000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Flips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Flips" />
       <module name="java" />
@@ -93,30 +101,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1_1_32" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test1_1_32" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="9 1 10" />
-      <option name="REDIRECT_INPUT" value="true" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/../../../test.txt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Book_1_2_2_1" />
       <item itemvalue="Application.Rolls" />
       <item itemvalue="Application.FlipsMax" />
       <item itemvalue="Application.Flips" />
       <item itemvalue="Application.ShuffleTest" />
-      <item itemvalue="Application.Test1_1_32" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Book_1_2_2_1" />
         <item itemvalue="Application.Rolls" />
         <item itemvalue="Application.FlipsMax" />
         <item itemvalue="Application.Flips" />
         <item itemvalue="Application.ShuffleTest" />
-        <item itemvalue="Application.Test1_1_32" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +180,7 @@
       <workItem from="1701748311731" duration="1046000" />
       <workItem from="1701760098744" duration="57000" />
       <workItem from="1701760310367" duration="425000" />
+      <workItem from="1701765277261" duration="998000" />
     </task>
     <servers />
   </component>
