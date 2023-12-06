@@ -2,19 +2,11 @@
 #define DATE_H
 
 #ifdef ONE
-
-typedef struct date{
-    int value;
-} Date;
-
-#else
-
 typedef struct date{
     int year;
     int month;
     int day;
 } Date;
-
 #endif
 
 void initDate(Date * date, int y, int m, int d);
