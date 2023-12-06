@@ -2,30 +2,45 @@
 #include <stdlib.h>
 #include "date.h"
 
-void initDate(Date * date, int y, int m, int d)
+void initDate(Date * d, int y, int m, int day)
 {
-    date->month = m;
-    date->day = d;
-    date->year = y;
+#ifdef ONE
+    d->value = y * 512 + m * 32 + d;
+#else
+    d->month = m;
+    d->day = day;
+    d->year = y;
+#endif
 }
 
-int month(Date *date)
+int month(Date *d)
 {
-    return date->month;
+#ifdef ONE
+    return ( d->value / 32 ) % 16;
+#else
+    return d->month;
+#endif
 }
 
-int day(Date *date)
+int day(Date *d)
 {
-    return date->day;
+#ifdef ONE
+    return d->day % 32;
+#else
+    return d->day;
+#endif
 }
 
-int year(Date *date)
+int year(Date *d)
 {
-    return date->year;
+#ifdef ONE
+    return d->value / 512;
+#else
+    return d->year;
+#endif
 }
 
-void dateToString(Date * date, char * str, int size)
+void dateToString(Date * d, char * str, int n)
 {
-    sprintf(str,size,"%d/%d/%d",month(),day(),year());
+    sprintf(str,n,"%d/%d/%d",month(d),day(d),year(d));
 }
-

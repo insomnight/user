@@ -17,14 +17,14 @@ typedef struct date{
 
 #endif
 
-void initDate(Date * date, int y, int m, int d);
+void initDate(Date * d, int y, int m, int day);
 
-int month(Date *date);
+int month(Date *d);
 
-int day(Date *date);
+int day(Date *d);
 
-int year(Date *date);
+int year(Date *d);
 
-void dateToString(Date * date, char * str, int size);
+void dateToString(Date * d, char * str, int n);
 
 #endif
