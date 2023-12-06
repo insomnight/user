@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BUFFSIZE 2056
+
+int main(int argc,char * argv[])
+{
+    FILE * in, * out;
+    char buff[BUFFSIZE];
+    size_t bytes;
+    
+    if(argc < 3)
+    {
+        fprintf(stderr,"Usage: %s infileName ... outfileName\n",argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    if((out = fopen(argv[argc - 1],"w") ) == NULL)
+    {
+        fprintf(stderr,"Can't open the file %s\n",argv[argc - 1]);
+        exit(EXIT_FAILURE);
+    }
+
+    for(int i = 1; i < argc - 1; i++)
+    {
+        if((in = fopen(argv[i],"r")) == NULL)
+        {
+            fprintf(stderr,"Can't open the file %s\n",argv[i]);
+            continue;
+        }
+        rewind(in);
+        while( (bytes = fread(buff, sizeof(char), BUFFSIZE, in)) > 0 )
+            fwrite(buff,sizeof(char), bytes,out);
+        fclose(in);
+    }
+    fclode(out);
+    return 0;
+}
