@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1/2/book/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/2/book/Counter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +61,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Book_1_2_2_1">
+  <component name="RunManager" selected="Application.Counter">
     <configuration name="Book_1_2_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Book_1_2_2_1" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value=".2 .5 .5 .6 100000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Counter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Counter" />
+      <module name="java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,28 +101,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShuffleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ShuffleTest" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="10 1000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Counter" />
       <item itemvalue="Application.Book_1_2_2_1" />
       <item itemvalue="Application.Rolls" />
       <item itemvalue="Application.FlipsMax" />
       <item itemvalue="Application.Flips" />
-      <item itemvalue="Application.ShuffleTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Counter" />
         <item itemvalue="Application.Book_1_2_2_1" />
         <item itemvalue="Application.Rolls" />
         <item itemvalue="Application.FlipsMax" />
         <item itemvalue="Application.Flips" />
-        <item itemvalue="Application.ShuffleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -183,6 +183,7 @@
       <workItem from="1701765277261" duration="998000" />
       <workItem from="1701824526342" duration="222000" />
       <workItem from="1701841438106" duration="302000" />
+      <workItem from="1701851401192" duration="239000" />
     </task>
     <servers />
   </component>
