@@ -44,3 +44,16 @@ void dateToString(Date * d, char * str, int n)
 {
     snprintf(str,n,"%d/%d/%d",month(d),day(d),year(d));
 }
+
+int main(int argc,char * argv[])
+{
+    int m = atoi(argv[1]);
+    int d = atoi(argv[2]);
+    int y = atoi(argv[3]);
+    Date de;
+    initDate(&de,m,d,y);
+    char str[50];
+    dateToString(&de,str,50);
+    printf("%s\n",str);
+    return 0;
+}

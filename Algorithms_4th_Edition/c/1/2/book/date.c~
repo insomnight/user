@@ -42,5 +42,5 @@ int year(Date *d)
 
 void dateToString(Date * d, char * str, int n)
 {
-    sprintf(str,n,"%d/%d/%d",month(d),day(d),year(d));
+    snprintf(str,n,"%d/%d/%d",month(d),day(d),year(d));
 }
