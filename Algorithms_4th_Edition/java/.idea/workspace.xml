@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="" />
+    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1/2/book/StaticSETofInts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/2/book/StaticSETofInts.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,15 +62,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestVisualAccumulator">
-    <configuration name="Book_1_2_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Book_1_2_2_1" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value=".2 .5 .5 .6 100000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Whitelist">
     <configuration name="Counter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Counter" />
       <module name="java" />
@@ -99,20 +94,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Whitelist" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Whitelist" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Whitelist" />
       <item itemvalue="Application.TestVisualAccumulator" />
       <item itemvalue="Application.TestAccumulator" />
       <item itemvalue="Application.DateTest" />
       <item itemvalue="Application.Counter" />
-      <item itemvalue="Application.Book_1_2_2_1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Whitelist" />
         <item itemvalue="Application.TestVisualAccumulator" />
         <item itemvalue="Application.TestAccumulator" />
         <item itemvalue="Application.DateTest" />
         <item itemvalue="Application.Counter" />
-        <item itemvalue="Application.Book_1_2_2_1" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +189,7 @@
       <workItem from="1701931164317" duration="485000" />
       <workItem from="1701933250019" duration="783000" />
       <workItem from="1701942099820" duration="261000" />
+      <workItem from="1701992220170" duration="1034000" />
     </task>
     <servers />
   </component>

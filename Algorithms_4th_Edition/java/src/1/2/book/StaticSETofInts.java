@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
@@ -13,9 +12,19 @@ public class StaticSETofInts {
     }
 
     public boolean contains(int key)
-    {return rank(key)!= -1}
+    {return rank(key)!= -1;}
 
     private int rank(int key) {
-
+        int lo = 0;
+        int hi = a.length - 1;
+        int mid;
+        while(lo <= hi)
+        {
+            mid = (lo + hi) / 2;
+            if(key > a[mid]) lo = mid + 1;
+            else if(key < a[mid]) hi = mid - 1;
+            return mid;
+        }
+        return -1;
     }
 }
