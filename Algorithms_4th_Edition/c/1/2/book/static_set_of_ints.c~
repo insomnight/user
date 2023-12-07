@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include "static_set_of_ints.h"
+
+int rank(int a[],int n,int key);
+int intcompar(const void * a, const void *b);
+
+/**
+ * 根据数组a[]中的所有值创建一个集合
+ * param: StaticSETofInts * p 要初始化的集合
+ * param: a[] , 数组a，用来初始化集合
+ * param: n 数组a的长度
+ */
+void initStaticSETofInts(StaticSETofInts *p,int a[],int n)
+{
+    freeStaticSETofInts(p);
+    p->length = n;
+    p->a = (int *) malloc(n * sizeof(int));
+    for(int i = 0 ; i < n; i++)
+        p->a[i] = a[i];
+    qsort(p->a,n,sizeof(int),intcompar);
+}
+
+/**
+ * key是否存在于集合中
+ * param: StaticSETofInts * p 集合的指针
+ * param: key 要查找的整数
+ */
+bool contains(StaticSETofInts *p,int key)
+{
+    return rank(p->a,p->length,key) != -1;
+}
+
+void freeStaticSETofInts(StaticSETofInts *p)
+{
+    free(p->a);
+}
+
+int rank(int a[],int n,int key)
+{
+    int lo = 0;
+    int hi = n - 1;
+    int mid;
+    while(lo <= hi)
+    {
+        mid = (lo + hi) / 2;
+        if(key < a[mid]) hi = mid - 1;
+        else if(key > a[mid]) lo = mid + 1;
+        else return mid;
+    }
+    return -1;
+}
+
+int intcompar(const void * a, const void *b)
+{
+    int * ia = (int *) a;
+    int * ib = (int *) b;
+    return *ia - *ib;
+}
