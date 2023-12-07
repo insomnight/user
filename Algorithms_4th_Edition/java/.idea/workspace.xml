@@ -61,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestAccumulator">
+  <component name="RunManager" selected="Application.TestVisualAccumulator">
     <configuration name="Book_1_2_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Book_1_2_2_1" />
       <module name="java" />
@@ -85,14 +85,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rolls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Rolls" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="1000000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestAccumulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestAccumulator" />
       <module name="java" />
@@ -101,20 +93,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestVisualAccumulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestVisualAccumulator" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="20000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.TestVisualAccumulator" />
       <item itemvalue="Application.TestAccumulator" />
       <item itemvalue="Application.DateTest" />
       <item itemvalue="Application.Counter" />
       <item itemvalue="Application.Book_1_2_2_1" />
-      <item itemvalue="Application.Rolls" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestVisualAccumulator" />
         <item itemvalue="Application.TestAccumulator" />
         <item itemvalue="Application.DateTest" />
         <item itemvalue="Application.Counter" />
         <item itemvalue="Application.Book_1_2_2_1" />
-        <item itemvalue="Application.Rolls" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +187,7 @@
       <workItem from="1701918385406" duration="1261000" />
       <workItem from="1701929848370" duration="59000" />
       <workItem from="1701931164317" duration="485000" />
+      <workItem from="1701933250019" duration="783000" />
     </task>
     <servers />
   </component>
