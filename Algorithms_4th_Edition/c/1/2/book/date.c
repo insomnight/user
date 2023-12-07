@@ -25,7 +25,7 @@ int month(Date *d)
 int day(Date *d)
 {
 #ifdef ONE
-    return d->day % 32;
+    return d->value % 32;
 #else
     return d->day;
 #endif
