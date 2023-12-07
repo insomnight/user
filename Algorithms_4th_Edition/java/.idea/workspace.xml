@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="" />
+    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DateTest">
+  <component name="RunManager" selected="Application.TestAccumulator">
     <configuration name="Book_1_2_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Book_1_2_2_1" />
       <module name="java" />
@@ -83,14 +85,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlipsMax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FlipsMax" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="100000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Rolls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rolls" />
       <module name="java" />
@@ -99,20 +93,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestAccumulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestAccumulator" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="10000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.TestAccumulator" />
       <item itemvalue="Application.DateTest" />
       <item itemvalue="Application.Counter" />
       <item itemvalue="Application.Book_1_2_2_1" />
       <item itemvalue="Application.Rolls" />
-      <item itemvalue="Application.FlipsMax" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestAccumulator" />
         <item itemvalue="Application.DateTest" />
         <item itemvalue="Application.Counter" />
         <item itemvalue="Application.Book_1_2_2_1" />
         <item itemvalue="Application.Rolls" />
-        <item itemvalue="Application.FlipsMax" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +186,7 @@
       <workItem from="1701851401192" duration="239000" />
       <workItem from="1701918385406" duration="1261000" />
       <workItem from="1701929848370" duration="59000" />
+      <workItem from="1701931164317" duration="485000" />
     </task>
     <servers />
   </component>
