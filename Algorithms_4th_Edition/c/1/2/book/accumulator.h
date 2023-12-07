@@ -7,6 +7,8 @@ typedef struct accumulator
     double total;
 } Accumulator;
 
+void initAccumulator(Accumulator * a);
+
 /**
  * 添加一个新的数据值
  * param: a 指向累加器的指针

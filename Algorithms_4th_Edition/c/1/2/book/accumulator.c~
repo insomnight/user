@@ -15,6 +15,7 @@ void initAccumulator(Accumulator * a)
  */
 void addDataValue(Accumulator * a,double val)
 {
+    printf("%d\n",a->n);
     a->n++;
     a->total +=val;
 }
