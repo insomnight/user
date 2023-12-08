@@ -1,3 +1,8 @@
+# 算法4 1.2数据抽象练习
+
+## 1.2.1 编写一个Point2D的用例，从命令行接受一个整数N。在单位正方形中生成N个随机点，然后计算两点之间的最近距离
+
+```java
 import edu.princeton.cs.algs4.Interval1D;
 import edu.princeton.cs.algs4.Interval2D;
 import edu.princeton.cs.algs4.Point2D;
@@ -30,3 +35,4 @@ public class Book_1_2_2_1 {
         System.out.println(box.area());
     }
 }
+```
