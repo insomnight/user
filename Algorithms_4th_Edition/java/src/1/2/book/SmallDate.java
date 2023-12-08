@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class SmallDate extends Date {
 
     private final int value;
@@ -19,5 +21,18 @@ public class SmallDate extends Date {
     @Override
     public int year() {
         return value / 512;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SmallDate smallDate = (SmallDate) o;
+        return value == smallDate.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 }

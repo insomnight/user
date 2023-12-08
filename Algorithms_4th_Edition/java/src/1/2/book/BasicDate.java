@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class BasicDate extends Date {
 
     private final int year;
@@ -24,5 +26,18 @@ public class BasicDate extends Date {
     @Override
     public int year() {
         return year;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BasicDate basicDate = (BasicDate) o;
+        return year == basicDate.year && month == basicDate.month && day == basicDate.day;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(year, month, day);
     }
 }
