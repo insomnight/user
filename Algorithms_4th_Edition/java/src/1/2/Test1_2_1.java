@@ -1,7 +1,7 @@
-import edu.princeton.cs.algs4.*;
-
-import java.awt.geom.Line2D;
-import java.util.Objects;
+import edu.princeton.cs.algs4.Interval1D;
+import edu.princeton.cs.algs4.Interval2D;
+import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.StdDraw;
 
 public class Test1_2_1 {
 
