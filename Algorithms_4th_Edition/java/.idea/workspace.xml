@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1/2/book/Book_1_2_2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/2/book/Book_1_2_2_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,17 +61,17 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test1_2_1">
-    <configuration name="DateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DateTest" />
+  <component name="RunManager" selected="Application.Test1_2_2">
+    <configuration name="Test1_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_2_1" />
       <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="12 31 1999" />
+      <option name="PROGRAM_PARAMETERS" value="10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test1_2_1" />
+    <configuration name="Test1_2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_2_2" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="10" />
       <method v="2">
@@ -103,19 +102,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test1_2_2" />
       <item itemvalue="Application.Test1_2_1" />
       <item itemvalue="Application.Whitelist" />
       <item itemvalue="Application.TestVisualAccumulator" />
       <item itemvalue="Application.TestAccumulator" />
-      <item itemvalue="Application.DateTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1_2_2" />
         <item itemvalue="Application.Test1_2_1" />
         <item itemvalue="Application.Whitelist" />
         <item itemvalue="Application.TestVisualAccumulator" />
         <item itemvalue="Application.TestAccumulator" />
-        <item itemvalue="Application.DateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -193,6 +192,7 @@
       <workItem from="1701992220170" duration="1034000" />
       <workItem from="1702002384965" duration="173000" />
       <workItem from="1702017639072" duration="4249000" />
+      <workItem from="1702022253636" duration="1149000" />
     </task>
     <servers />
   </component>
