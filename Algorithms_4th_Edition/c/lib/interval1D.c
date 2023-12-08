@@ -1,32 +1,42 @@
-#ifndef INTERVAL1D_H
-#define INTERVAL1D_H
-
-typedef struct interval1d
-{
-    double min;
-    double max;
-} Interval1D;
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * Initializes a closed interval [min,max].
  * Params: min - the smaller endpoint
  *         max - the larger endpoint
  */
-void initInterval1D(Interval1D * i, double min, double max);
+void initInterval1D(Interval1D * i, double min, double max)
+{
+    if(min > max)
+    {
+        fprintf(stderr,"the min: %d is larger than max: %d\n",min,max);
+        exit(EXIT_FAILURE);
+    }
+
+    i->min = min;
+    i->max = max;
+}
 
 /**
  * Params: i - the interval
  * Returns the min endpoint of this interval.
  * Returns: the min endpoint of this interval.
  */
-double min(const Interval1D * i);
+double min(const Interval1D * i)
+{
+    return i->min;
+}
 
 /**
  * Params: i - the interval
  * Returns the max endpoint of this interval.
  * Returns: the max endpoint of this interval.
  */
-double max(const Interval1D * i);
+double max(const Interval1D * i)
+{
+    return i->max;
+}
 
 /**
  * Returns true if this interval intersects the specified interval.
@@ -34,7 +44,12 @@ double max(const Interval1D * i);
  *         b - the other interval
  * Returns: true if a intersects the b;false otherwise
  */
-int intersects(const Interval1D * a,const Interval1D * b);
+int intersects(const Interval1D * a,const Interval1D * b)
+{
+    if(a->max < b->min) return false;
+    if(b->max < a->min) return false;
+    return true;
+}
 
 /**
  * Returns true if this interval contains the specified value.
@@ -42,18 +57,25 @@ int intersects(const Interval1D * a,const Interval1D * b);
  *         x - the value
  * Returns: true if this interval contains the value x;false otherwise
  */
-int contains(const Interval1D * i, double x);
+int contains(const Interval1D * i, double x)
+{
+    return (i->min <= x) && (x <= i->max);
+}
 
 /**
  * Returns the length of this interval.
  * Params: i - the terval
  * Returns: the length of this interval(max - min)
  */
-double length(const Interval1D * i);
+double length(const Interval1D * i)
+{
+    return i->max - i->min;
+}
 
 /**
  * init the char arr with interval1d.
  */
-void interval1DtoString(const Interval1d * i,char * str,size_t n);
-
-#endif
+void interval1DtoString(const Interval1d * i,char * str,size_t n)
+{
+    snprintf(str,n,"[%lf, %lf]",i->min,i->max);
+}
