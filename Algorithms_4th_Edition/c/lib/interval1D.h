@@ -12,7 +12,7 @@ typedef struct interval1d
  * Params: min - the smaller endpoint
  *         max - the larger endpoint
  */
-void initInterval1D(Interval1D * i, double min, double max);
+void initInterval1D(Interval1D * i, double mi, double ma);
 
 /**
  * Params: i - the interval
@@ -54,6 +54,6 @@ double length(const Interval1D * i);
 /**
  * init the char arr with interval1d.
  */
-void interval1DtoString(const Interval1d * i,char * str,size_t n);
+void interval1DtoString(const Interval1D * i,char * str,size_t n);
 
 #endif

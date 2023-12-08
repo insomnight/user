@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "interval1D.h"
 /**
  * Initializes a closed interval [min,max].
  * Params: min - the smaller endpoint
  *         max - the larger endpoint
  */
-void initInterval1D(Interval1D * i, double min, double max)
+void initInterval1D(Interval1D * i, double mi, double ma)
 {
     if(min > max)
     {
@@ -14,8 +14,8 @@ void initInterval1D(Interval1D * i, double min, double max)
         exit(EXIT_FAILURE);
     }
 
-    i->min = min;
-    i->max = max;
+    i->min = mi;
+    i->max = ma;
 }
 
 /**
@@ -46,9 +46,9 @@ double max(const Interval1D * i)
  */
 int intersects(const Interval1D * a,const Interval1D * b)
 {
-    if(a->max < b->min) return false;
-    if(b->max < a->min) return false;
-    return true;
+    if(a->max < b->min) return 0;
+    if(b->max < a->min) return 0;
+    return 1;
 }
 
 /**
@@ -75,7 +75,7 @@ double length(const Interval1D * i)
 /**
  * init the char arr with interval1d.
  */
-void interval1DtoString(const Interval1d * i,char * str,size_t n)
+void interval1DtoString(const Interval1D * i,char * str,size_t n)
 {
     snprintf(str,n,"[%lf, %lf]",i->min,i->max);
 }
