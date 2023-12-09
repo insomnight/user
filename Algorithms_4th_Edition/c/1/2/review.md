@@ -235,6 +235,23 @@ int circulari_rotation(const char * a,const char * b)
 }
 ```
 
+```java
+public class Test1_2_6 {
+
+    public static boolean circulari_rotation(String a,String b)
+    {
+        return a.length() == b.length() && b.concat(b).contains(a);
+    }
+
+    public static void main(String[] args) {
+        if(circulari_rotation(args[0],args[1]))
+            System.out.println("yes");
+        else
+            System.out.println("no");
+    }
+}
+```
+
 ## 1.2.7 以下递归函数的返回值是什么
 
 ```java
