@@ -180,3 +180,57 @@ Hello World
 ```
 
 答："Hello World"。String对象是不可变的——所有字符串方法都会返回一个新的String对象（但它们不会改变参数对象的值）。这段代码忽略了返回的对象并直接打印了原字符串。要打印出"WORLD"，请用s = s.toUpperCase()和s =s.substring(6, 11)。
+
+## 1.2.6 如果字符串s中的字符循环移动任意位置之后能够得到另一个字符串t，那么s就被称为t的回环变位（circular rotation）。例如，ACTGACG就是TGACGAC的一个回环变位，反之亦然。判定这个条件在基因组序列的研究中是很重要的。编写一个程序检查两个给定的字符串s和t是否互为回环变位。提示：答案只需要一行用到indexOf()、length()和字符串连接的代码
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char * s_gets(char * st,int n);
+int circulari_rotation(const char * a,const char * b);
+
+int main(void)
+{
+    char a[1024];
+    char b[1024];
+    while(s_gets(a,1024) != NULL && a[0] != '\0' && s_gets(b,1024) != NULL && b[0] != '\0')
+        if(circulari_rotation(a,b))
+            printf("%s and %s is circulari totation\n",a,b);
+        else
+            printf("%s and %s not is circulari totation\n",a,b);
+    return 0;
+}
+
+char * s_gets(char * st,int n)
+{
+    char * ret_val;
+    char * find;
+
+    ret_val = fgets(st, n, stdin);
+    if(ret_val)
+    {
+        find = strchr(st,'\n');
+        if(find)
+            *find = '\0';
+        else 
+            while(getchar() != '\n')
+                continue;
+    }
+    return ret_val;
+}
+
+int circulari_rotation(const char * a,const char * b)
+{
+    size_t alen = strlen(a);
+    size_t blen = strlen(b);
+    if(alen != blen)
+        return 0;
+    size_t strlen = alen + blen;
+    char * str = malloc( (strlen + 1 ) * sizeof(char) );
+    strncpy(str,b,strlen);
+    strncat(str,b,blen);
+    return strstr(str,a) != NULL;
+}
+```
