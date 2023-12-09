@@ -234,3 +234,18 @@ int circulari_rotation(const char * a,const char * b)
     return strstr(str,a) != NULL;
 }
 ```
+
+## 1.2.7 以下递归函数的返回值是什么
+
+```java
+public static String mystery(String s)
+{
+    int N = s.length();
+    if (N <= 1) return s;
+    String a = s.substring(0, N/2);
+    String b = s.substring(N/2, N);
+    return mystery(b) + mystery(a);
+}
+```
+
+s字符串的倒序
