@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1/2/Test1_2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/2/Test1_2_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test1_2_3">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test1_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test1_2_1" />
       <module name="java" />
@@ -87,14 +94,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestVisualAccumulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestVisualAccumulator" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="20000" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Whitelist" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Whitelist" />
       <module name="java" />
@@ -103,19 +102,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test1_2_3" />
       <item itemvalue="Application.Test1_2_2" />
       <item itemvalue="Application.Test1_2_1" />
       <item itemvalue="Application.Whitelist" />
-      <item itemvalue="Application.TestVisualAccumulator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test1_2_3" />
         <item itemvalue="Application.Test1_2_1" />
         <item itemvalue="Application.Test1_2_2" />
         <item itemvalue="Application.Whitelist" />
-        <item itemvalue="Application.TestVisualAccumulator" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +195,7 @@
       <workItem from="1702022253636" duration="1149000" />
       <workItem from="1702023597662" duration="2146000" />
       <workItem from="1702084968914" duration="2982000" />
+      <workItem from="1702088587399" duration="73000" />
     </task>
     <servers />
   </component>
@@ -212,20 +212,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>15</line>
-          <properties class="Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

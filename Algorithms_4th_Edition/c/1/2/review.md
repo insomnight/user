@@ -150,3 +150,33 @@ public class Test1_2_3 {
     }
 }
 ```
+
+## 1.2.4 以下这段代码会打印出什么
+
+```java
+String string1 = "hello";
+String string2 = string1;
+string1 = "world";
+StdOut.println(string1);
+StdOut.println(string2);
+```
+
+```java
+world
+hello
+```
+
+## 1.2.5 以下这段代码会打印出什么
+
+```java
+String s = "Hello World";
+s.toUpperCase();
+s.substring(6, 11);
+StdOut.println(s);
+```
+
+```java
+Hello World
+```
+
+答："Hello World"。String对象是不可变的——所有字符串方法都会返回一个新的String对象（但它们不会改变参数对象的值）。这段代码忽略了返回的对象并直接打印了原字符串。要打印出"WORLD"，请用s = s.toUpperCase()和s =s.substring(6, 11)。
