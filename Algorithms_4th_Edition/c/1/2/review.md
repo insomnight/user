@@ -238,13 +238,13 @@ int circulari_rotation(const char * a,const char * b)
 ```java
 public class Test1_2_6 {
 
-    public static boolean circulari_rotation(String a,String b)
+    public static boolean circular_rotation(String a, String b)
     {
         return a.length() == b.length() && b.concat(b).contains(a);
     }
 
     public static void main(String[] args) {
-        if(circulari_rotation(args[0],args[1]))
+        if(circular_rotation(args[0],args[1]))
             System.out.println("yes");
         else
             System.out.println("no");
@@ -324,5 +324,45 @@ int intcompar(const void * a,const void * b)
     int * ia = (int *) a;
     int * ib = (int *) b;
     return *ia - *ib;
+}
+```
+
+```java
+import edu.princeton.cs.algs4.Counter;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+import java.util.Arrays;
+
+public class Test1_2_9 {
+
+    public static int rank(int key, int[] a,Counter c)
+    {  // 数组必须是有序的
+        int lo  = 0;
+        int hi = a.length -1;
+        while (lo <= hi)
+        {  // 被查找的键要么不存在，要么必然存在于a[lo..hi]之中
+            c.increment();
+            int mid = lo + (hi - lo) / 2;
+            if       (key < a[mid]) hi = mid -1;
+            else if (key > a[mid]) lo = mid + 1;
+            else                     return mid;
+        }
+        return -1;
+    }
+    public static void main(String[] args)
+    {
+        int[] whitelist = In.readInts(args[0]);
+        Arrays.sort(whitelist);
+        while (! StdIn.isEmpty())
+        {  // 读取键值，如果不存在于白名单中则将其打印
+            int key = StdIn.readInt();
+            Counter counter = new Counter("key"+ key);
+            if (rank(key, whitelist,counter) >= 0)
+                StdOut.println(key);
+            System.out.println(counter);
+        }
+    }
 }
 ```
