@@ -21,12 +21,10 @@ public class Test1_2_1 {
                 minP[0] = points[0];
                 minP[1] = points[1];
                 min = points[0].distanceTo(points[1]);
-                System.out.println(min);
             }
             if(i > 1)
                 for (int j = 0; j < i; j++) {
                     double temp = points[j].distanceTo(points[i]);
-                    System.out.println(temp);
                     if(temp < min)
                     {
                         min = temp;
