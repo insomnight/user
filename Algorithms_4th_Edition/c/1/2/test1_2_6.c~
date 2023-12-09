@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char * s_gets(char * st,int n);
+int circulari_rotation(const char * a,const char * b);
+
+int main(void)
+{
+    char a[1024];
+    char b[1024];
+    while(s_gets(a,1024) != NULL && a[0] != '\0' && s_gets(b,1024) != NULL && b[0] != '\0')
+        if(circulari_rotation(a,b))
+            printf("%s and %s is circulari totation\n",a,b);
+    return 0;
+}
+
+char * s_gets(char * st,int n)
+{
+    char * ret_val;
+    char * find;
+
+    ret_val = fgets(st, n, stdin);
+    if(ret_val)
+    {
+        find = strchr(st,'\n');
+        if(find)
+            *find = '\0';
+        else 
+            while(getchar() != '\n')
+                continue;
+    }
+    return ret_val;
+}
+
+int circulari_rotation(const char * a,const char * b)
+{
+    size_t alen = strlen(a);
+    size_t blen = strlen(b);
+    if(alen != blen)
+        return 0;
+    size_t strlen = alen + blen;
+    char * str = malloc( (strlen + 1 ) * sizeof(char) );
+    strncpy(str,b,strlen);
+    strncat(str,b,blen);
+    return strstr(str,a) != NULL;
+}
