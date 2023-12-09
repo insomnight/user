@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="" />
+    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Test1_2_6">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="java" />
@@ -91,27 +93,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Whitelist" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Whitelist" />
+    <configuration name="Test1_2_6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_2_6" />
       <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="ACT1GACG TGACGAC1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test1_2_6" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test1_2_3" />
       <item itemvalue="Application.Test1_2_2" />
       <item itemvalue="Application.Test1_2_1" />
-      <item itemvalue="Application.Whitelist" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1_2_6" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test1_2_3" />
         <item itemvalue="Application.Test1_2_1" />
         <item itemvalue="Application.Test1_2_2" />
-        <item itemvalue="Application.Whitelist" />
       </list>
     </recent_temporary>
   </component>
@@ -194,6 +197,7 @@
       <workItem from="1702084968914" duration="2982000" />
       <workItem from="1702088587399" duration="73000" />
       <workItem from="1702090030192" duration="2000" />
+      <workItem from="1702106325756" duration="474000" />
     </task>
     <servers />
   </component>
