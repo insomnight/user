@@ -71,7 +71,8 @@ int dayOfTheWeek(SmartDate * sd)
             daysdiff += isLeapYear(i) ? 366 : 365;
         for(int i = month(sd) + 1; i <= 12; i++)
             daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 : monthDay[i];
-        daysdiff += isLeapYear(year(sd)) && month(sd) == 2 ? monthDay[i] + 1 - day(sd) : monthDay[i] - day(sd);
+        int i = month(sd);
+        daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 - day(sd) : monthDay[i] - day(sd);
         daysdiff++;
         return day_of_weeks_r[daysdiff % 7];
     }
