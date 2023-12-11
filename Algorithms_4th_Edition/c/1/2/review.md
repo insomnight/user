@@ -366,3 +366,69 @@ public class Test1_2_9 {
     }
 }
 ```
+
+## 1.2.10 编写一个类VisualCounter，支持加一和减一操作。它的构造函数接受两个参数N和max，其中N指定了操作的最大次数，max指定了计数器的最大绝对值。作为副作用，用图像显示每次计数器变化后的值
+
+VisualCounter类:
+
+```java
+import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdRandom;
+
+public class VisualCounter {
+
+    private int count;
+
+    private int value;
+
+    public VisualCounter(int n, int max) {
+        StdDraw.setXscale(0,n);
+        StdDraw.setYscale(-max,max);
+        StdDraw.setPenRadius(.005);
+    }
+
+    public void increment()
+    {
+        count++;
+        value++;
+        StdDraw.point(count,value);
+    }
+
+    public void decrease()
+    {
+        count++;
+        value--;
+        StdDraw.point(count,value);
+    }
+
+    public int tally()
+    {return value;}
+
+    @Override
+    public String toString() {
+        return "[" + count+", "+value+"]";
+    }
+}
+```
+
+测试用例:
+```java
+import edu.princeton.cs.algs4.StdRandom;
+
+public class TestVisualCounter {
+
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        VisualCounter vc = new VisualCounter(n, n);
+        StdRandom.setSeed(System.currentTimeMillis());
+        for (int i = 0; i < n; i++) {
+            if(StdRandom.uniformDouble() > 0.3)
+                vc.decrease();
+            else
+                vc.increment();
+        }
+        System.out.println(vc.tally());
+        System.out.println(vc);
+    }
+}
+```
