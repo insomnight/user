@@ -725,3 +725,20 @@ public class Transaction {
     }
 }
 ```
+
+## 1.2.15 文件输入。基于String的split()方法实现In中的静态方法readInts
+
+```java
+public static int[] readInts(String name)
+{
+    In in = new In(name);
+    String input = in.readAll();
+    String[] words = input.split("\\s+");
+    int[] ints = new int[words.length];
+    for(int i = 0; i ＜ word.length; i++)
+      ints[i] = Integer.parseInt(words[i]);
+    return ints;
+}
+```
+
+我们会在1.3节中学习另一个不同的实现（请见1.3.1.5节）。
