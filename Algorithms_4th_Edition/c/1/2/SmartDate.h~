@@ -16,6 +16,4 @@ int year(SmartDate * sd);
 
 void smartDateToString(SmartDate * sd,char * str,size_t n);
 
-int dayOfTheWeek(SmartDate * sd);
-
 #endif

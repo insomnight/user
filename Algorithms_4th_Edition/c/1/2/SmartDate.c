@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "SmartDate.h"
+#define DEFULT_YEAR 2000
+#define DEFAULT_MONTH 1
+#define DEFAULT_DAY 1
 
 static int monthDay[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+static int day_of_weeks[6] = { 6, 7, 1, 2, 3, 4, 5}
+static int day_of_weeks_r[6] = { 6, 5, 4, 3, 2, 1, 7}
 
 int isLeapYear(int y);
 
@@ -47,6 +52,29 @@ int year(SmartDate * sd)
 void smartDateToString(SmartDate * sd,char * str,size_t n)
 {
     snprintf(str, n,"%d/%d/%d",month(sd),day(sd),year(sd));
+}
+
+int dayOfTheWeek(SmartDate * sd)
+{
+    int daysdiff = 0;
+    if(year(sd) >= DEFULT_YEAR )
+    {
+        for(int i = DEFULT_YEAR; i < year(sd); i++) 
+            daysdiff += isLeapYear(i) ? 366 : 365;
+        for(int i = 1; i < month(sd); i++)
+            daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 : monthDay[i];
+        daysdiff += day(sd);
+        daysdiff -= 1;
+        return day_of_weeks[daysdiff % 7];
+    } else {
+        for(int i = year(sd) + 1; i < DEFULT_YEAR; i++)
+            daysdiff += isLeapYear(i) ? 366 : 365;
+        for(int i = month(sd) + 1; i <= 12; i++)
+            daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 : monthDay[i];
+        daysdiff += isLeapYear(year(sd)) && month(sd) == 2 ? monthDay[i] + 1 - day(sd) : monthDay[i] - day(sd);
+        daysdiff++;
+        return day_of_weeks_r[daysdiff % 7];
+    }
 }
 
 int isLeapYear(int y)
