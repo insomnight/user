@@ -30,7 +30,7 @@ public class SmartDate {
         this.day = d;
     }
 
-    int dayOfTheWeek()
+    public int dayOfTheWeek()
     {
         int daysdiff = 0;
         if(year() >= 2000 )

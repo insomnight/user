@@ -604,7 +604,8 @@ int dayOfTheWeek(SmartDate * sd)
             daysdiff += isLeapYear(i) ? 366 : 365;
         for(int i = month(sd) + 1; i <= 12; i++)
             daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 : monthDay[i];
-        daysdiff += isLeapYear(year(sd)) && month(sd) == 2 ? monthDay[i] + 1 - day(sd) : monthDay[i] - day(sd);
+        int i = month(sd);
+        daysdiff += isLeapYear(year(sd)) && i == 2 ? monthDay[i] + 1 - day(sd) : monthDay[i] - day(sd);
         daysdiff++;
         return day_of_weeks_r[daysdiff % 7];
     }
@@ -614,4 +615,29 @@ int isLeapYear(int y)
 {
     return (y % 4 == 0 && y % 100 != 0) || y % 400 == 0;
 }
+```
+
+```java
+    public int dayOfTheWeek()
+    {
+        int daysdiff = 0;
+        if(year() >= 2000 )
+        {
+            for(int i = 2000; i < year(); i++)
+                daysdiff += isLeapYear(i) ? 366 : 365;
+            for(int i = 1; i < month(); i++)
+                daysdiff += isLeapYear(year()) && i == 2 ? monthDay[i] + 1 : monthDay[i];
+            daysdiff += day();
+            daysdiff -= 1;
+            return day_of_weeks[daysdiff % 7];
+        } else {
+            for(int i = year() + 1; i < 2000; i++)
+                daysdiff += isLeapYear(i) ? 366 : 365;
+            for(int i = month() + 1; i <= 12; i++)
+                daysdiff += isLeapYear(year()) && i == 2 ? monthDay[i] + 1 : monthDay[i];
+            daysdiff += isLeapYear(year()) && month() == 2 ? monthDay[month()] + 1 - day() : monthDay[month()] - day();
+            daysdiff++;
+            return day_of_weeks_r[daysdiff % 7];
+        }
+    }
 ```
