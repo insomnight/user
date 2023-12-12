@@ -984,3 +984,55 @@ public class Rational {
 assert Long.MAX_VALUE / a < b : "溢出,a * b > Long最大值"
 assert Long.MAX_VALUE - a < b : "溢出,a - b > Long最大值"
 ```
+
+## 1.2.18 累加器的方差。以下代码为Accumulator类添加了var()和stddev()方法，它们计算了addDataValue()方法的参数的方差和标准差，验证这段代码
+
+```java
+public class Accumulator
+{
+    private double m;
+    private double s;
+    private int N;
+    public void addDataValue(double x)
+    {
+      N++;
+      s = s + 1.0 ＊ (N-1) / N ＊ (x - m) ＊ (x - m);
+      m = m + (x - m) / N;
+    }
+    public double mean()
+    {  return m;  }
+    public double var()
+    {  return s/(N -1);  }
+    public double stddev()
+    {  return Math.sqrt(this.var());  }
+}
+```
+
+与直接对所有数据的平方求和的方法相比较，这种实现能够更好地避免四舍五入产生的误差。
+
+## 1.2.19 字符串解析。为你在练习1.2.13中实现的Date和Transaction类型编写能够解析字符串数据的构造函数。它接受一个String参数指定的初始值，格式如表1.2.20所示
+
+![test19](test19.png "test19")
+
+部分解答：
+
+```java
+public Date(String date)
+{
+    String[] fields = date.split("/");
+    month = Integer.parseInt(fields[0]);
+    day   = Integer.parseInt(fields[1]);
+    year  = Integer.parseInt(fields[2]);
+}
+```
+
+```java
+public Transaction(String t)
+{
+    String[] fields = t.split(" ");
+    
+    custName = fields[0];
+    transactionDate = new Date(fields[1]);
+    amount = Double.paseDouble(fields[1]);
+}
+```
