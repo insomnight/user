@@ -1,13 +1,16 @@
+import java.util.Objects;
+
 public class Rational {
 
-    private long numerator;
-    private long denominator;
+    private final long numerator;
+    private final long denominator;
 
     public Rational(long numerator, long denominator) {
         if(denominator == 0L)
             throw new IllegalArgumentException("denominator can not be 0");
-        this.numerator = numerator;
-        this.denominator = denominator;
+        long l = gcd_sign(numerator, denominator);
+        this.numerator = numerator / l;
+        this.denominator = denominator / l;
     }
 
    public static long gcd(long p, long q)
@@ -25,48 +28,53 @@ public class Rational {
        else
            return result;
    }
-    public Rational plus(Rational b);
+    public Rational plus(Rational b)
     {
+        long n,d;
+        n = this.numerator * b.denominator + this.denominator * b.numerator;
+        d = this.denominator * b.denominator;
+        return new Rational(n,d);
     }
 
-    public Rational minus(Rational b);
+    public Rational minus(Rational b)
     {
+        long n,d;
+        n = this.numerator * b.denominator - this.denominator * b.numerator;
+        d =this.denominator * b.denominator;
+        return new Rational(n,d);
     }
 
-    public Rational times(Rational b);
+    public Rational times(Rational b)
     {
-        long gcd_num,numerator,denominator;
-
-        numerator = a->numerator * b->numerator;
-        denominator = a->denominator * b->denominator;
-
-        gcd_num = gcd_sign(numerator,denominator);
-        r->numerator = numerator / gcd_num;
-        r->denominator = denominator / gcd_num;
-        return r;
+        long n,d;
+        n = this.numerator * b.numerator;
+        d = this.denominator * b.denominator;
+        return new Rational(n,d);
     }
 
-    Rational * divides(Rational * r, const Rational * a, const Rational * b);
+    public Rational divides(Rational b)
     {
-        long gcd_num,numerator,denominator;
-
-        numerator = a->numerator * b->denominator;
-        denominator = a->denominator * b->numerator;
-
-        gcd_num = gcd_sign(numerator,denominator);
-        r->numerator = numerator / gcd_num;
-        r->denominator = denominator / gcd_num;
-        return r;
+        long n,d;
+        n = this.numerator * b.denominator;
+        d = this.denominator * b.numerator;
+        return new Rational(n,d);
     }
 
-    int rationalEquals(const Rational * a,const Rational * b)
-    {
-        return ( (a->numerator / b->numerator) / (a->denominator / b->denominator) ) == 1;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rational rational = (Rational) o;
+        return numerator == rational.numerator && denominator == rational.denominator;
     }
 
-    char * rationalToString(const Rational * a, char * str, size_t n)
-    {
-        snprintf(str,n,"%ld/%ld",a->numerator,a->denominator);
-        return str;
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
+    }
+
+    @Override
+    public String toString() {
+        return this.numerator + "/" + this.denominator;
     }
 }
