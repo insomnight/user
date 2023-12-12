@@ -77,4 +77,20 @@ public class Rational {
     public String toString() {
         return this.numerator + "/" + this.denominator;
     }
+
+    public static void main(String[] args) {
+        Rational a = new Rational(2,6);
+        System.out.println(a);
+
+        Rational b = new Rational(-6,-15);
+        System.out.println(b);
+
+        System.out.println(a + " + " + b + " = " + a.plus(b));
+        System.out.println(a + " - " + b + " = " + a.minus(b));
+        System.out.println(a + " * " + b + " = " + a.times(b));
+        System.out.println(a + " / " + b + " = " + a.divides(b));
+
+        System.out.println(a.equals(b));
+        System.out.println(a.equals(new Rational(3,9)));
+    }
 }
