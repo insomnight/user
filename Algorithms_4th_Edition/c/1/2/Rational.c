@@ -90,3 +90,36 @@ long gcd_sign(long p, long q)
     else
         return result;
 }
+
+int main(void)
+{
+    Rational a,b,r;
+    char stra[100];
+    char strb[100];
+    char strr[100];
+    initRational(&a,2,6);
+    rationalToString(&a,stra,100);
+    printf("%s\n",stra);
+    initRational(&b,-6,-15);
+    rationalToString(&b,strb,100);
+    printf("%s\n",strb);
+    
+    plus(&r,&a,&b);
+    rationalToString(&r,strr,100);
+    printf("%s + %s = %s\n",stra,strb,strr);
+
+    minus(&r,&a,&b);
+    rationalToString(&r,strr,100);
+    printf("%s - %s = %s\n",stra,strb,strr);
+
+    times(&r,&a,&b);
+    rationalToString(&r,strr,100);
+    printf("%s * %s = %s\n",stra,strb,strr);
+    
+    divides(&r,&a,&b);
+    rationalToString(&r,strr,100);
+    printf("%s / %s = %s\n",stra,strb,strr);
+
+    printf("%s is %s : %s", stra, strb, rationalEquals( &a, &b) ? "true" : "false");
+    return 0;
+}
