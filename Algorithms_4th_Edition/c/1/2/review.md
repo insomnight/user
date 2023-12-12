@@ -977,3 +977,10 @@ public class Rational {
     }
 }
 ```
+
+## 1.2.17 有理数实现的健壮性。在Rational（请见练习1.2.16）的开发中使用断言来防止溢出
+
+```java
+assert Long.MAX_VALUE / a < b : "溢出,a * b > Long最大值"
+assert Long.MAX_VALUE - a < b : "溢出,a - b > Long最大值"
+```
