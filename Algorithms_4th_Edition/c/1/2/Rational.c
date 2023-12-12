@@ -6,7 +6,7 @@ long gcd_sign(long p, long q);
 
 long gcd(long p,long q);
 
-void initRational(Rational * a,int numerator, int denominator)
+void initRational(Rational * a,long numerator, long denominator)
 {
     if(denominator == 0)
     {
@@ -26,9 +26,7 @@ Rational * plus(Rational * r, const Rational * a, const Rational * b)
     numerator = a->numerator * b->denominator + b->numerator * a->denominator;
     denominator = a->denominator * b->denominator;
 
-    gcd_num = gcd_sign(numerator,denominator);
-    r->numerator = numerator / gcd_num;
-    r->denominator = denominator / gcd_num;
+    initRational(r,numerator,denominator);
     return r;
 }
 
@@ -39,9 +37,7 @@ Rational * minus(Rational * r, const Rational * a, const Rational * b)
     numerator = a->numerator * b->denominator - b->numerator * a->denominator;
     denominator = a->denominator * b->denominator;
 
-    gcd_num = gcd_sign(numerator,denominator);
-    r->numerator = numerator / gcd_num;
-    r->denominator = denominator / gcd_num;
+    initRational(r,numerator,denominator);
     return r;
 }
 
@@ -52,9 +48,7 @@ Rational * times(Rational * r, const Rational * a, const Rational * b)
     numerator = a->numerator * b->numerator;
     denominator = a->denominator * b->denominator;
 
-    gcd_num = gcd_sign(numerator,denominator);
-    r->numerator = numerator / gcd_num;
-    r->denominator = denominator / gcd_num;
+    initRational(r,numerator,denominator);
     return r;
 }
 
@@ -65,15 +59,13 @@ Rational * divides(Rational * r, const Rational * a, const Rational * b)
     numerator = a->numerator * b->denominator;
     denominator = a->denominator * b->numerator;
 
-    gcd_num = gcd_sign(numerator,denominator);
-    r->numerator = numerator / gcd_num;
-    r->denominator = denominator / gcd_num;
+    initRational(r,numerator,denominator);
     return r;
 }
 
 int rationalEquals(const Rational * a,const Rational * b)
 {
-    return ( (a->numerator / b->numerator) / (a->denominator / b->denominator) ) == 1;
+    return a->numerator == b->numerator && a->denominator == b->denominator;
 }
 
 char * rationalToString(const Rational * a, char * str, size_t n)
