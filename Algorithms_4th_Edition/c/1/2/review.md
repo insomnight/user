@@ -748,3 +748,58 @@ public static int[] readInts(String name)
 ![Rational库API](rational.png "Rational库API")
 
 无需测试溢出（请见练习1.2.17），只需使用两个long型实例变量表示分子和分母来控制溢出的可能性。使用欧几里得算法来保证分子和分母没有公因子。编写一个测试用例检测你实现的所有方法。
+
+```c
+#ifndef RATIONAL_H
+#define RATIONAL_H
+
+typedef struct rational
+{
+    long numerator;
+    long denominator;
+} Rational;
+
+void initRational(Rational * a,int numerator, int denominator);
+
+Rational * plus(Rational * r, const Rational * a, const Rational * b); 
+
+Rational * minus(Rational * r, const Rational * a, const Rational * b); 
+
+Rational * times(Rational * r, const Rational * a, const Rational * b); 
+
+Rational * divides(Rational * r, const Rational * a, const Rational * b); 
+
+int rationalEquals(const Rational * a,const Rational * b);
+
+char * rationalToString(const Rational * a, char * str, size_t n);
+
+#endif
+```
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "Transaction.h"
+
+char * who(Transaction * t)
+{
+    return t->cust_name;
+}
+
+SmartDate * when(Transaction * t)
+{
+    return t->sd;
+}
+
+double amount(Transaction * t)
+{
+    return t->amount;
+}
+
+void transactionToString(Transation * t,char * str,size_t n)
+{
+    char s[100];
+    smartDateToString(t->sd,s,100);
+    snprintf(str,n,"%s, %s, %lf",t->cust_name,s,t->amount); 
+}
+```
