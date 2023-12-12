@@ -798,7 +798,7 @@ void initRational(Rational * a,int numerator, int denominator)
     a->denominator = denominator / gcd_num;
 }
 
-Rational * plus(Rational * r, const Rational * a, const Rational * b);
+Rational * plus(Rational * r, const Rational * a, const Rational * b)
 {
     long gcd_num,numerator,denominator;
 
@@ -811,7 +811,7 @@ Rational * plus(Rational * r, const Rational * a, const Rational * b);
     return r;
 }
 
-Rational * minus(Rational * r, const Rational * a, const Rational * b);
+Rational * minus(Rational * r, const Rational * a, const Rational * b)
 {
     long gcd_num,numerator,denominator;
 
@@ -824,7 +824,7 @@ Rational * minus(Rational * r, const Rational * a, const Rational * b);
     return r;
 }
 
-Rational * times(Rational * r, const Rational * a, const Rational * b);
+Rational * times(Rational * r, const Rational * a, const Rational * b)
 {
     long gcd_num,numerator,denominator;
 
@@ -837,7 +837,7 @@ Rational * times(Rational * r, const Rational * a, const Rational * b);
     return r;
 }
 
-Rational * divides(Rational * r, const Rational * a, const Rational * b);
+Rational * divides(Rational * r, const Rational * a, const Rational * b)
 {
     long gcd_num,numerator,denominator;
 
