@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../c/1/3/book/Bag.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/1/3/book/Bag.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +61,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Stats">
+  <component name="RunManager" selected="Application.Reverse">
     <configuration name="Rational" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rational" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Reverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Reverse" />
       <module name="java" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,14 +79,6 @@
     <configuration name="Stats" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Stats" />
       <module name="java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test1_2_6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test1_2_6" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="ACT1GACG TGACGAC1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,19 +100,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Reverse" />
       <item itemvalue="Application.Stats" />
       <item itemvalue="Application.Rational" />
       <item itemvalue="Application.TestVisualCounter" />
       <item itemvalue="Application.TestVisualAccumulator" />
-      <item itemvalue="Application.Test1_2_6" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Reverse" />
         <item itemvalue="Application.Stats" />
         <item itemvalue="Application.Rational" />
         <item itemvalue="Application.TestVisualCounter" />
         <item itemvalue="Application.TestVisualAccumulator" />
-        <item itemvalue="Application.Test1_2_6" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +205,7 @@
       <workItem from="1702362815202" duration="4133000" />
       <workItem from="1702436996594" duration="643000" />
       <workItem from="1702446037654" duration="217000" />
+      <workItem from="1702451089491" duration="282000" />
     </task>
     <servers />
   </component>
