@@ -61,7 +61,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Reverse">
+  <component name="RunManager" selected="Application.Evaluate">
+    <configuration name="Evaluate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Evaluate" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Rational" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rational" />
       <module name="java" />
@@ -83,14 +90,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestVisualAccumulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestVisualAccumulator" />
-      <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="20" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestVisualCounter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestVisualCounter" />
       <module name="java" />
@@ -100,19 +99,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Evaluate" />
       <item itemvalue="Application.Reverse" />
       <item itemvalue="Application.Stats" />
       <item itemvalue="Application.Rational" />
       <item itemvalue="Application.TestVisualCounter" />
-      <item itemvalue="Application.TestVisualAccumulator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Evaluate" />
         <item itemvalue="Application.Reverse" />
         <item itemvalue="Application.Stats" />
         <item itemvalue="Application.Rational" />
         <item itemvalue="Application.TestVisualCounter" />
-        <item itemvalue="Application.TestVisualAccumulator" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +205,7 @@
       <workItem from="1702436996594" duration="643000" />
       <workItem from="1702446037654" duration="217000" />
       <workItem from="1702451089491" duration="282000" />
+      <workItem from="1702453995887" duration="1088000" />
     </task>
     <servers />
   </component>
