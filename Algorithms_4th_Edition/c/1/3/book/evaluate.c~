@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+int main(void)
+{
+    char ops[100][100];
+    int opstop = 0;
+    double vals[100];
+    int valtop = 0;
+    
+    char s[100];
+    while(scanf("%s",s) == 1 && s[0] != '\0')
+    {
+        if(!strcmp(s,"(")) continue;
+        else if(!strcmp(s,"+")) {strcpy(ops[opstop],s);opstop++;}
+        else if(!strcmp(s,"-")) {strcpy(ops[opstop],s);opstop++;}
+        else if(!strcmp(s,"*")) {strcpy(ops[opstop],s);opstop++;}
+        else if(!strcmp(s,"/")) {strcpy(ops[opstop],s);opstop++;}
+        else if(!strcmp(s,")"))
+        {
+            if(!strcmp(ops[opstop-1],"+")) {vals[valtop - 2] += vals[valtop - 1];valtop--;opstop--;}
+            else if(!strcmp(ops[opstop-1],"-")) {vals[valtop - 2] -= vals[valtop - 1];valtop--;opstop--;}
+            else if(!strcmp(ops[opstop-1],"*")) {vals[valtop - 2] *= vals[valtop - 1];valtop--;opstop--;}
+            else if(!strcmp(ops[opstop-1],"/")) {vals[valtop - 2] /= vals[valtop - 1];valtop--;opstop--;}
+            else if(!strcmp(ops[opstop-1],"sqrt")) {vals[valtop - 1] = sqrt(vals[valtop - 1]);opstop--;}
+        }
+        else {vals[valtop] = atof(s);valtop++;}
+    }
+    printf("%lf\n",vals[valtop - 1]);
+    return 0;
+}
