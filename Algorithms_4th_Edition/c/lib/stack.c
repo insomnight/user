@@ -1,0 +1,75 @@
+/* stack.c –– 栈的实现 */
+#include "stack.h" 
+
+static void CopyToItem(Item source,Item * target);
+/*
+ * 该栈被初始化为空
+ * 将top设置为零
+ * */
+void InitializeStack(Stack * ps)
+{
+    ps -> top = 0;
+}
+
+/*
+ * 如果栈已满，该函数返回true；否则，返回false
+ * 判断top的值有没有超出数组大小MAXSTACK
+ * */
+bool FullStack(const Stack * ps)
+{
+    if(ps->top == MAXSTACK)
+        return true;
+    else
+        return false;
+}
+
+/*
+ *如果栈为空，该函数返回true；否则，返回false
+ */
+bool EmptyStack(const Stack *ps)
+{
+    if(ps->top == 0)
+        return true;
+    else
+        return false;
+}
+
+/*
+ * 如果栈不满，把 item 放在栈顶，该函数返回true；
+ * 否则，栈不变，该函数返回 false
+ */
+bool Push(Item item, Stack * ps)
+{
+    if(FullStack(ps))
+        return false;
+    CopyToItem(item,&ps->items[ps->top]);
+    ps->top++;
+    return true;
+}
+
+
+/*
+ * 如果栈不为空，把栈顶的item拷贝到*pitem，
+ * 删除栈顶的item，该函数返回ture；
+ * 如果该操作后栈中没有项，则重置该栈为空。
+ * 如果删除操作之前栈为空，栈不变，该函数返回false
+ */
+bool Pop(Item *pitem, Stack * ps)
+{
+    if(EmptyStack(ps))
+        return false;
+    CopyToItem(ps->items[ps->top-1],pitem);
+    ps->top--;
+    return true;
+}
+
+void Traverse(const Stack * ps, void(*pfun)(Item item))
+{
+    for(int i = ps->top - 1; i >= 0; i--)
+        (*pfun)(ps->items[i]);
+}
+
+static void CopyToItem(Item source,Item * target)
+{
+    *target = source;
+}
