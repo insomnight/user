@@ -40,5 +40,3 @@ int size(const Bag * b)
 {
     return b->size;
 }
-
-#endif
