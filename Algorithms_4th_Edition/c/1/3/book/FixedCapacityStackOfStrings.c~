@@ -6,6 +6,7 @@
 void initFixedCapacityStackOfStrings(FixedCapacityStackOfStrings *fp, int cap)
 {
     fp->a = (char **) malloc(cap * sizeof(char *));
+    fp->n = 0;
 }
 
 void push(FixedCapacityStackOfStrings * fp,char * item)
@@ -32,6 +33,7 @@ int size(FixedCapacityStackOfStrings * fp)
 
 int freeAll(FixedCapacityStackOfStrings * fp)
 {
+    printf("%d %d %d\n",sizeof(fp->a),sizeof(char *),sizeof(fp->a)/sizeof(char *));
     for(int i = 0; i < sizeof(fp->a)/sizeof(char *); i++)
         free(fp->a[i]);
     free(fp->a);

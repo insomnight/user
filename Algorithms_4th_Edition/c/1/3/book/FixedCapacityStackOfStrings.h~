@@ -7,7 +7,7 @@ typedef struct fixedCapacityStackOfStrings
     int n;
 } FixedCapacityStackOfStrings;
 
-void FixedCapacityStackOfStrings(FixedCapacityStackOfStrings *fp, int cap);
+void initFixedCapacityStackOfStrings(FixedCapacityStackOfStrings *fp, int cap);
 
 void push(FixedCapacityStackOfStrings * fp,char * item);
 
