@@ -1,6 +1,8 @@
 import edu.princeton.cs.algs4.StdIn;
 
-public class FixedCapacityStack<Item> {
+import java.util.Iterator;
+
+public class FixedCapacityStack<Item> implements Iterable<Item> {
     private Item[] a;
     private int N;
 
@@ -51,5 +53,30 @@ public class FixedCapacityStack<Item> {
             else if(!s.isEmpty()) System.out.print(s.pop() + " ");
         }
         System.out.println("(" + s.size() + " left on stack)");
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        return new ReverseArrayIterator();
+    }
+
+    private class ReverseArrayIterator implements Iterator<Item>
+    {
+        private int i = N;
+
+        @Override
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        @Override
+        public Item next() {
+            return a[--i];
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("不支持修改操作");
+        }
     }
 }
