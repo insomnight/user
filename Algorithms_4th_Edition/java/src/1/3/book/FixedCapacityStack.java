@@ -18,10 +18,27 @@ public class FixedCapacityStack<Item> {
     {return N;}
 
     public void push(Item item)
-    {a[N++] = item;}
+    {
+        if(N == a.length)
+            resize(2 * a.length);
+        a[N++] = item;
+    }
 
     public Item pop()
-    {return a[--N];}
+    {
+        Item item = a[--N];
+        a[N] = null;
+        if(N > 0 && N == a.length / 4)
+            resize(a.length/2);
+        return item;
+    }
+
+    private void resize(int max)
+    {
+        Item[] temp = (Item[]) new Object[max];
+        if (N >= 0) System.arraycopy(a, 0, temp, 0, N);
+        a = temp;
+    }
 
     public static void main(String[] args) {
         FixedCapacityStack<String> s;
