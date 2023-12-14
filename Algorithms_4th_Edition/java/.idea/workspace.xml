@@ -61,10 +61,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FixedCapacityStackOfStrings">
+  <component name="RunManager" selected="Application.FixedCapacityStack">
     <configuration name="Evaluate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Evaluate" />
       <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FixedCapacityStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FixedCapacityStack" />
+      <module name="java" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/../c/1/3/book/tobe.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -74,13 +83,6 @@
       <module name="java" />
       <option name="REDIRECT_INPUT" value="true" />
       <option name="INPUT_FILE" value="$PROJECT_DIR$/../c/1/3/book/tobe.txt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Rational" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Rational" />
-      <module name="java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,19 +102,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.FixedCapacityStack" />
       <item itemvalue="Application.FixedCapacityStackOfStrings" />
       <item itemvalue="Application.Evaluate" />
-      <item itemvalue="Application.Rational" />
       <item itemvalue="Application.Reverse" />
       <item itemvalue="Application.Stats" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FixedCapacityStack" />
         <item itemvalue="Application.FixedCapacityStackOfStrings" />
         <item itemvalue="Application.Evaluate" />
         <item itemvalue="Application.Reverse" />
         <item itemvalue="Application.Stats" />
-        <item itemvalue="Application.Rational" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +213,7 @@
       <workItem from="1702516868818" duration="214000" />
       <workItem from="1702517778504" duration="2000" />
       <workItem from="1702522653280" duration="1153000" />
+      <workItem from="1702532670556" duration="673000" />
     </task>
     <servers />
   </component>
