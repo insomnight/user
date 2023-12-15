@@ -39,6 +39,11 @@ int freeAll(FixedCapacityStackOfStrings * fp)
     free(fp->a);
 }
 
+int isFull( FixedCapacityStackOfStrings * fp)
+{
+    return f->n == fp->cap;
+}
+
 int main(void)
 {
     FixedCapacityStackOfStrings s;
@@ -60,3 +65,4 @@ int main(void)
     freeAll(&s);
     return 0;
 }
+

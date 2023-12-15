@@ -5,6 +5,7 @@ typedef struct fixedCapacityStackOfStrings
 {
     char ** a;
     int n;
+    int cap;
 } FixedCapacityStackOfStrings;
 
 void initFixedCapacityStackOfStrings(FixedCapacityStackOfStrings *fp, int cap);

@@ -20,4 +20,6 @@ int size(FixedCapacityStackOfStrings * fp);
 
 int freeAll(FixedCapacityStackOfStrings * fp);
 
+int isFull(FixedCapacityStackOfStrings * fp)
+
 #endif

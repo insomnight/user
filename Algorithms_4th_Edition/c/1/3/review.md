@@ -6,3 +6,10 @@
 public boolean isFull()
 {return a.length() == N;}
 ```
+
+```c
+int isFull( FixedCapacityStackOfStrings * fp)
+{
+    return f->n == fp->cap;
+}
+```
