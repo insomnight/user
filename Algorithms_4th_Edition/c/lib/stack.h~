@@ -2,7 +2,7 @@
 #include <stdbool.h>
 /* 在这里插入 Item 类型 */
 /* 例如： typedef int Item; */
-typedef char Item;
+typedef int Item;
 
 #define MAXSTACK 100
 
