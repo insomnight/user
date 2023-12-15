@@ -138,3 +138,19 @@ public class Parentheses {
     }
 }
 ```
+
+## 1.3.5 当N为50时下面这段代码会打印什么？从较高的抽象层次描述给定正整数N时这段代码的行为
+
+```java
+Stack＜Integer＞ stack = new Stack＜Integer＞();
+
+while (N > 0)
+{
+    stack.push(N % 2);
+    N = N / 2;
+}
+for (int d : stack) StdOut.print(d);
+StdOut.println();
+```
+
+答：打印N的二进制表示（当N为50时打印110010）。
