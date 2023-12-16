@@ -187,3 +187,11 @@ Item peek()
     return first.item;
 }
 ```
+
+## 1.3.8 给定以下输入，给出DoublingStackOfStrings的数组的内容和大小
+
+```java
+it was - the best - of times - - - it was - the - -
+```
+
+![push()和pop()操作中数组大小调整的轨迹见表](test1_3_8.png "push()和pop()操作中数组大小调整的轨迹见表")
