@@ -179,3 +179,11 @@ bool peek(Item *pitem,const Stack * ps)
     return true;
 }
 ```
+
+```java
+Item peek()
+{
+    if(isEmpty()) throw new NoSuchElementException("Stack underfolow");
+    return first.item;
+}
+```
