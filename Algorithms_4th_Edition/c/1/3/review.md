@@ -154,3 +154,15 @@ StdOut.println();
 ```
 
 答：打印N的二进制表示（当N为50时打印110010）。
+
+## 1.3.6 下面这段代码对队列q进行了什么操作
+
+```java
+Stack＜String＞ stack = new Stack＜String＞();
+while (! q.isEmpty())
+stack.push(q.dequeue());
+while (! stack.isEmpty())
+q.enqueue(stack.pop());
+```
+
+这段代码对队列q进行了倒序操作
