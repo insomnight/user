@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="" />
+    <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Parentheses">
+  <component name="RunManager" selected="Application.Test1_3_9">
     <configuration name="Evaluate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Evaluate" />
       <module name="java" />
@@ -94,27 +96,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Reverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Reverse" />
+    <configuration name="Test1_3_9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test1_3_9" />
       <module name="java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test1_3_9" />
       <item itemvalue="Application.Parentheses" />
       <item itemvalue="Application.FixedCapacityStack" />
       <item itemvalue="Application.FixedCapacityStackOfStrings" />
       <item itemvalue="Application.Evaluate" />
-      <item itemvalue="Application.Reverse" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1_3_9" />
         <item itemvalue="Application.Parentheses" />
         <item itemvalue="Application.FixedCapacityStack" />
         <item itemvalue="Application.FixedCapacityStackOfStrings" />
         <item itemvalue="Application.Evaluate" />
-        <item itemvalue="Application.Reverse" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +223,7 @@
       <workItem from="1702619754921" duration="951000" />
       <workItem from="1702626558185" duration="951000" />
       <workItem from="1702688184784" duration="249000" />
+      <workItem from="1702693530441" duration="1153000" />
     </task>
     <servers />
   </component>
