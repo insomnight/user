@@ -166,3 +166,16 @@ q.enqueue(stack.pop());
 ```
 
 这段代码对队列q进行了倒序操作
+
+## 1.3.7 为Stack添加一个方法peek()，返回栈中最近添加的元素（而不弹出它
+
+```c
+/* 访问最新加入栈的元素,不删除 */
+bool peek(Item *pitem,const Stack * ps)
+{
+    if(EmptyStack(ps))
+        return false;
+    CopyToItem(ps->items[ps->top-1],pitem);
+    return true;
+}
+```

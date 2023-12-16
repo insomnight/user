@@ -44,3 +44,6 @@ bool Pop(Item *pitem, Stack * ps);
 
 /* 访问每个节点并执行pfun指向的函数 */
 void Traverse(const Stack * ps, void(*pfun)(Item item));
+
+/* 访问最新加入栈的元素,不删除 */
+bool peek(Item *pitem,const Stack * ps);
