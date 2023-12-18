@@ -1,8 +1,9 @@
 /* stack.h –– 栈的接口 */
 #include <stdbool.h>
+#include "LinkedString.h"
 /* 在这里插入 Item 类型 */
 /* 例如： typedef int Item; */
-typedef char Item;
+typedef String Item;
 
 #define MAXSTACK 100
 

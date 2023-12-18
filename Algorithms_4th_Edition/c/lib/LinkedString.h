@@ -1,0 +1,35 @@
+#ifndef LINKEDSTRING_H
+#define LINKEDSTRING_H
+
+#include <stdbool.h>
+
+typedef struct node
+{
+    char item;
+    struct node * next;
+} Node;
+
+typedef struct string
+{
+    Node * head;
+    Node * last;
+    int length;
+} String;
+
+void initString(String *str);
+
+bool stringIsEmpty(const String * str);
+
+bool stringLength(const String * str);
+
+String * append(String *dest,const String * sour);
+
+bool appendChar(String * str,char ch);
+
+bool addFirst(String * str, char ch);
+
+void stringTraverse(const String * str,void(*pfun)(char item));
+
+void emptyTheString(String * str);
+
+#endif

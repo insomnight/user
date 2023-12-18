@@ -1,10 +1,11 @@
 /* stack.h –– 栈的接口 */
 #include <stdbool.h>
+#include "LinkedString.h"
 /* 在这里插入 Item 类型 */
 /* 例如： typedef int Item; */
-typedef char Item;
+typedef  Item;
 
-#define MAXSTACK 100
+#define String MAXSTACK 100
 
 typedef struct stack
 {
@@ -46,4 +47,4 @@ bool Pop(Item *pitem, Stack * ps);
 void Traverse(const Stack * ps, void(*pfun)(Item item));
 
 /* 访问最新加入栈的元素,不删除 */
-Item peek(const Stack * ps);
+bool peek(Item *pitem,const Stack * ps);
