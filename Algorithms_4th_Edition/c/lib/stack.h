@@ -1,9 +1,8 @@
 /* stack.h –– 栈的接口 */
 #include <stdbool.h>
-#include "LinkedString.h"
 /* 在这里插入 Item 类型 */
 /* 例如： typedef int Item; */
-typedef String Item;
+typedef double Item;
 
 #define MAXSTACK 100
 
@@ -12,6 +11,12 @@ typedef struct stack
     Item items[MAXSTACK];/*存储信息*/
     int top;/*第1个空位的索引*/
 } Stack;
+
+typedef struct stackIterator
+{
+    Item * a;
+    int current;
+} Iterator;
 
 /*操作:初始化栈*/
 /*前提条件:ps 指向一个栈*/
@@ -48,3 +53,9 @@ void Traverse(const Stack * ps, void(*pfun)(Item item));
 
 /* 访问最新加入栈的元素,不删除 */
 bool peek(Item *pitem,const Stack * ps);
+
+void initIterator(Iterator * i, Stack * ps);
+
+bool hasNext(Iterator * i);
+
+Item next(Iterator * i);

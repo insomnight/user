@@ -82,3 +82,19 @@ bool peek(Item *pitem,const Stack * ps)
     CopyToItem(ps->items[ps->top-1],pitem);
     return true;
 }
+
+void initIterator(Iterator * i, Stack * ps)
+{
+    i -> a = ps-> items;
+    i -> current = ps-> top;
+}
+
+bool hasNext(Iterator * i)
+{
+    return i -> current > 0;
+}
+
+Item next(Iterator * i)
+{
+    return i -> a[--i];
+}
