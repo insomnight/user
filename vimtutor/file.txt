@@ -1,0 +1,84 @@
+A very intelligent turtle
+That liked using vim
+Found programming UNIX a hurdle
+and that's not saying much for the turtle!!!
+
+   This is a line with example text
+the solder holding one of the chip melted and the
+we user a computer that became the cummin winter.
+To err is human.To really foul up you need a computer.
+To err is human. you need a computer.
+To err is human. a computer.
+To err is human
+To be human
+To be human
+To be houman
+there is somerhing grong here
+There is something wrong here
+There is something xxxxx here
+There is something 
+x here
+To <B>generate</B> a table of <B>contents
+To generate a table of contents
+To generate a table of contents
+This is an examination sample visual mode
+This is an example visual mode
+text more text
+more text more text
+text text text
+text more
+more text more
+
+name     Q1      Q2      Q3
+pierre   123     455     234
+john     0       90      39
+steve    392     63      334
+
+name     Q1      Q3
+pierre   123     234
+john     0       39
+steve    392     334
+
+name     Q1      Q2      Q3
+pierre   123     455     234
+john     0       90      39
+steve    392     63      334
+
+line 1
+line 3
+line 2
+
+Some more boring try text to out commands.
+Some more boring text to try out commands.
+teh
+the
+
+let sqr = LongVariable *
+let sqr = LongVariable * LongVariable 
+
+a text line
+line 2
+last line
+
+a text line
+line 2
+a text line
+last line
+
+testestttttttttttt
+
+this is some example text.
+this is some text.
+this is
+
+Hello there.  This
+is an example.  Just 
+some text. 
+
+Hello there.  Another line. Just 
+some text. 
+
+This is text.
+This is interesting.
+
+
