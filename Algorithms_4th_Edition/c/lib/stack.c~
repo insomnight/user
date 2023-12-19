@@ -75,7 +75,26 @@ static void CopyToItem(Item source,Item * target)
 }
 
 /* 访问最新加入栈的元素,不删除 */
-Item peek(const Stack * ps)
+bool peek(Item *pitem,const Stack * ps)
 {
-    return ps->item;
+    if(EmptyStack(ps))
+        return false;
+    CopyToItem(ps->items[ps->top-1],pitem);
+    return true;
+}
+
+void initIterator(Iterator * i, Stack * ps)
+{
+    i -> a = ps-> items;
+    i -> current = ps-> top;
+}
+
+bool hasNext(Iterator * i)
+{
+    return i -> current > 0;
+}
+
+Item next(Iterator * i)
+{
+    return i -> a[--i];
 }

@@ -96,5 +96,5 @@ bool hasNext(Iterator * i)
 
 Item next(Iterator * i)
 {
-    return i -> a[--i];
+    return i -> a[--(i->current)];
 }
