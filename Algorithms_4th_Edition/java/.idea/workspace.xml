@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c78d30ab-fcb0-462f-90c3-57895a939607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1/3/InfixToPostfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/1/3/InfixToPostfix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,18 +61,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InfixToPostfix">
-    <configuration name="FixedCapacityStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FixedCapacityStack" />
+  <component name="RunManager" selected="Application.EvaluatePostfix">
+    <configuration name="EvaluatePostfix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EvaluatePostfix" />
       <module name="java" />
-      <option name="REDIRECT_INPUT" value="true" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/../c/1/3/book/tobe.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FixedCapacityStackOfStrings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FixedCapacityStackOfStrings" />
+    <configuration name="FixedCapacityStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FixedCapacityStack" />
       <module name="java" />
       <option name="REDIRECT_INPUT" value="true" />
       <option name="INPUT_FILE" value="$PROJECT_DIR$/../c/1/3/book/tobe.txt" />
@@ -105,19 +102,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.EvaluatePostfix" />
       <item itemvalue="Application.InfixToPostfix" />
       <item itemvalue="Application.Test1_3_9" />
       <item itemvalue="Application.Parentheses" />
       <item itemvalue="Application.FixedCapacityStack" />
-      <item itemvalue="Application.FixedCapacityStackOfStrings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EvaluatePostfix" />
         <item itemvalue="Application.InfixToPostfix" />
         <item itemvalue="Application.Test1_3_9" />
         <item itemvalue="Application.Parentheses" />
         <item itemvalue="Application.FixedCapacityStack" />
-        <item itemvalue="Application.FixedCapacityStackOfStrings" />
       </list>
     </recent_temporary>
   </component>
@@ -229,6 +226,7 @@
       <workItem from="1702868577665" duration="7000" />
       <workItem from="1702885825881" duration="2311000" />
       <workItem from="1702942549568" duration="1839000" />
+      <workItem from="1702953239084" duration="1191000" />
     </task>
     <servers />
   </component>
