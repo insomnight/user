@@ -1,0 +1,89 @@
+/**
+ * 1.3.11 编写一段程序EvaluatePostfix，从标准输入中得到一个后序表达式，求值并打印结果（将上一题的程序中得到的输出用管道传递给这一段程序可以得到和Evaluate相同的行为）。
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define CLEN 2056
+
+char * s_gets(char * st, int n);
+double compvalue(char * ex);
+
+int main(void)
+{
+    char str[CLEN];
+    double a;
+    while(s_gets(str,CLEN) != NULL && str[0] != '\0')
+    {
+        a = compvalue(str);
+        printf("%s = %lf\n",str,a);
+    }
+    return 0;
+}
+
+char * s_gets(char * st, int n)
+{
+    char * ret_val;
+    char * find;
+
+    ret_val = fgets(st, n, stdin);
+    if(ret_val)
+    {
+        find = strchr(st, '\n');
+        if(find)
+            *find = '\0';
+        else
+            while(getchar() != '\n')
+                continue;
+    }
+    return ret_val;
+}
+
+double compvalue(char * ex)
+{
+    double stack[CLEN],d;
+    char *ch;
+    int top = 0;
+    ch = ex;
+    while(*ch != '\0')
+    {
+        switch(*ch)
+        {
+            case '+':
+                stack[top - 1] = stack[top - 1] + stack[top];
+                top--;
+                break;
+            case '-':
+                stack[top - 1] = stack[top - 1] - stack[top];
+                top--;
+                break;
+            case '*':
+                stack[top - 1] = stack[top - 1] * stack[top];
+                top--;
+                break;
+            case '/':
+                if(stack[top] == 0)
+                {
+                    fprintf(stderr,"\n\t除零错误!\n");
+                    exit(EXIT_FAILURE);
+                }
+                stack[top - 1] = stack[top - 1] / stack[top];
+                top--;
+                break;
+            case ' ':
+                break;
+            default:
+                d = 0;
+                while(*ch >= '0' && *ch <= '9')
+                {
+                    d = 10.0 * d + *ch - '0';
+                    ch++;
+                }
+                ch--;
+                top++;
+                stack[top] = d;
+        }
+        ch++;
+    }
+    return stack[top];
+}
