@@ -13,9 +13,8 @@ typedef struct resizingArrayQueue
 {
     Item * a;
     int arrayLength;
-    int items;     /*队列中的项数*/
-    int end;
     int head;
+    int items;
 } ResizingArrayQueue;
 
 /* 操作：        初始化队列                                       */

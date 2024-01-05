@@ -4,7 +4,7 @@
 
 /* 局部函数 */
 static void CopyToItem(Item * pdest, Item * psour)
-static void resize(ResizingArrayQueue pq, int max);
+static void resize(ResizingArrayQueue *pq, int max);
 
 void InitializeQueue(ResizingArrayQueue * pq)
 {
@@ -14,6 +14,7 @@ void InitializeQueue(ResizingArrayQueue * pq)
         fprintf(stderr, "Unable to allocate memory!\n");
         exit(1);
     }
+    pq -> head = 0;
     pq -> arrayLength = MAXQUEUE;
     pq -> items = 0;
 }
@@ -35,19 +36,42 @@ int QueueItemCount(const ResizingArrayQueue * pq)
 
 bool EnQueue(Item item, ResizingArrayQueue * pq)
 {
-
+    if(QueueIsFull(pq))
+        resize(pq, pq -> arrayLength * 2);
+    int index = ( pq -> head + pq -> items ) % pd -> arrayLength;
+    pq -> a[index]
+    CopyToItem( pq -> a + index, &item)
+    pq -> items++;
+    return true;
 }
 
 bool DeQueue(Item * pitem, ResizingArrayQueue * pq)
 {
+    if(QueueIsEmpty(pq))
+        return false;
+    if(pq -> arrayLength > MAXQUEUE && pq -> items == pq -> arrayLength / 4 )
+        resize(pq, pq -> arrayLength / 2);
+    pq -> a[index]
+    CopyToItem( pitem, pq -> a + pq -> head )
+    pq -> head = ( pq -> head + 1 ) % pq -> arrayLength;
+    pq -> items--;
+    return true;
 }
 
 /* 清空队列 */
 void EmptyTheQueue(ResizingArrayQueue * pq)
 {
-Item dummy;
-while (!QueueIsEmpty(pq))
-  DeQueue(&dummy, pq);
+    pq -> items = 0;
+    pq -> head = 0;
+    if(pq -> arrayLength != MAXQUEUE)
+        resize(pq, MAXQUEUE);
+}
+
+void EmptyTheQueue(ResizingArrayQueue * pq)
+{
+    pq -> items = 0;
+    pq -> head = 0;
+    free(pq -> a);
 }
 
 /* 局部函数 */
@@ -56,7 +80,7 @@ static void CopyToItem(Item * pdest, Item * psour)
     *pdest = *psour;
 }
 
-static void resize(ResizingArrayQueue pq, int max)
+static void resize(ResizingArrayQueue *pq, int max)
 {
     Item *temp;
     temp = (Item *) malloc(sizeof(Item) * max);
@@ -65,9 +89,13 @@ static void resize(ResizingArrayQueue pq, int max)
         fprintf(stderr, "Unable to allocate memory!\n");
         exit(1);
     }
+    int k = pq -> head;
     for(int i = 0; i < pq -> items; i++)
-        CopyToItem(&temp[i], &pq->a[i])
+    {
+        CopyToItem(&temp[i], &pq->a[ k % pq -> arrayLength ])
+    }
     free(pq -> a);
-    pq -> temp;
+    pq -> a = temp;
+    pq -> head = 0;
     pq -> arrayLength = max;
 }

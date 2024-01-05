@@ -13,8 +13,8 @@ typedef struct resizingArrayQueue
 {
     Item * a;
     int arrayLength;
-    int end;
     int head;
+    int items;
 } ResizingArrayQueue;
 
 /* 操作：        初始化队列                                       */
@@ -55,6 +55,11 @@ bool DeQueue(Item *pitem, ResizingArrayQueue * pq);
 /* 操作：        清空队列                                      */
 /* 前提条件：    pq 指向之前被初始化的队列                      */
 /* 后置条件：    队列被清空                                    */
+void EmptyTheQueue(ResizingArrayQueue * pq);
+
+/* 操作：        清空队列内存                                      */
+/* 前提条件：    pq 指向之前被初始化的队列,且队列不再使用                      */
+/* 后置条件：    队列占用内存被清空                                    */
 void EmptyTheQueue(ResizingArrayQueue * pq);
 
 #endif
